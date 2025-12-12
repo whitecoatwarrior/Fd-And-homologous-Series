@@ -1,0 +1,3476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedPlex Chemistry Topic Wise Notes and MCQS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a56db;
+            --secondary: #0ea5e9;
+            --accent: #10b981;
+            --light: #f8fafc;
+            --dark: #1e3a8a;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --info: #3b82f6;
+            --background: #f0f9ff;
+            --card-bg: #ffffff;
+            --text-primary: #1e3a8a;
+            --text-secondary: #4b5563;
+            --border-radius: 5px;
+            --shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.2s ease;
+            --compact-spacing: 3px;
+        }
+
+        .dark-mode {
+            --primary: #3b82f6;
+            --secondary: #0ea5e9;
+            --accent: #10b981;
+            --light: #1e293b;
+            --dark: #f1f5f9;
+            --background: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            position: relative;
+            font-size: 8.1px;
+            line-height: 1.1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4.86px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 6.48px;
+            border-radius: var(--border-radius);
+            margin-bottom: 6.48px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 60%);
+            animation: pulse 15s infinite linear;
+        }
+
+        @keyframes pulse {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 4.32px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo h1 {
+            font-size: 0.972rem;
+            font-weight: 800;
+            margin-bottom: 1.62px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo p {
+            font-weight: 500;
+            font-size: 0.486rem;
+            opacity: 0.9;
+        }
+
+        .header-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-content h1 {
+            font-size: 0.648rem;
+            margin-bottom: 4.32px;
+            color: #ffd700;
+        }
+
+        .header-content p {
+            font-size: 0.486rem;
+            line-height: 1.1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 15.12px;
+            height: 15.12px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            position: absolute;
+            top: 6.48px;
+            right: 6.48px;
+            z-index: 10;
+        }
+
+        .menu-toggle span {
+            width: 15.12px;
+            height: 1.62px;
+            background: white;
+            border-radius: 1.62px;
+            transition: var(--transition);
+            position: relative;
+            transform-origin: center;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(3.24px, 3.24px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(4.32px, -4.32px);
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 6.48px;
+            position: relative;
+        }
+
+        .nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4.86px;
+        }
+
+        .nav-header h2 {
+            font-size: 0.729rem;
+        }
+
+        .theme-toggle {
+            background: var(--card-bg);
+            border: none;
+            width: 25.92px;
+            height: 12.96px;
+            border-radius: 12.96px;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 1.62px;
+            box-shadow: var(--shadow);
+        }
+
+        .theme-toggle span {
+            width: 9.72px;
+            height: 9.72px;
+            border-radius: 50%;
+            background: var(--primary);
+            position: absolute;
+            transition: var(--transition);
+            left: 1.62px;
+        }
+
+        .theme-toggle.dark span {
+            left: calc(100% - 11.34px);
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 2.43px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 2.43px;
+            padding: 4.05px 4.86px;
+            background: var(--card-bg);
+            border: none;
+            border-radius: var(--border-radius);
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 0.486rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 1.5px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Panel Styles */
+        .panel {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 4.86px;
+            box-shadow: var(--shadow);
+            margin-bottom: 6.48px;
+            transition: var(--transition);
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4.86px;
+            padding-bottom: 4.05px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .panel-title {
+            font-size: 0.648rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 2.43px;
+        }
+
+        .panel-actions {
+            display: flex;
+            gap: 2.43px;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2.43px;
+            padding: 2.43px 4.86px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 0.486rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #0da271;
+            transform: translateY(-1px);
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 4.86px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            margin-bottom: 4.86px;
+        }
+
+        .card:hover {
+            transform: translateY(-1.5px);
+            box-shadow: 0 2.43px 6.48px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 2.43px;
+            margin-bottom: 4.05px;
+            padding-bottom: 4.05px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            font-size: 0.567rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            gap: 4.86px;
+        }
+
+        .grid-2 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .grid-3 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            padding: 9.72px 0;
+            margin-top: auto;
+            font-size: 0.486rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 6.48px;
+            margin-top: 6.48px;
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6.48px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-in {
+            animation: slideIn 0.3s ease forwards;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-6.48px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* MCQ Card Styles */
+        .mcq-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .mcq-info {
+            flex-grow: 1;
+            margin-bottom: 4.86px;
+        }
+
+        .mcq-id {
+            font-weight: 700;
+            font-size: 0.567rem;
+            color: var(--primary);
+            margin-bottom: 1.62px;
+        }
+
+        .mcq-subject {
+            font-size: 0.486rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.43px;
+        }
+
+        .mcq-chapter {
+            font-size: 0.486rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.43px;
+            font-weight: 600;
+        }
+
+        .mcq-details {
+            font-size: 0.405rem;
+            color: var(--text-secondary);
+            margin-bottom: 4.05px;
+        }
+
+        .start-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            padding: 4.05px 6.48px;
+            font-weight: 600;
+            font-size: 0.486rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            text-decoration: none;
+            display: block;
+        }
+
+        .start-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-1px);
+        }
+
+        /* Stats Panel */
+        .stats-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(64.8px, 1fr));
+            gap: 4.05px;
+            margin-bottom: 4.86px;
+        }
+
+        .stat-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 4.05px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-value {
+            font-size: 0.729rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.405rem;
+            color: var(--text-secondary);
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Explanation Section Styles */
+        .explanation-section {
+            margin-bottom: 12.15px;
+            padding: 9.72px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .explanation-header {
+            display: flex;
+            align-items: center;
+            gap: 6.48px;
+            margin-bottom: 6.48px;
+            padding-bottom: 4.86px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .explanation-icon {
+            width: 24.3px;
+            height: 24.3px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.81rem;
+        }
+
+        .explanation-title {
+            font-size: 0.729rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .explanation-content {
+            font-size: 0.567rem;
+            line-height: 1.4;
+            color: var(--text-primary);
+        }
+
+        .explanation-content h4 {
+            font-size: 0.648rem;
+            margin: 6.48px 0 3.24px;
+            color: var(--primary);
+        }
+
+        .explanation-content p {
+            margin-bottom: 4.86px;
+        }
+
+        .explanation-content ul, .explanation-content ol {
+            margin-left: 16.2px;
+            margin-bottom: 6.48px;
+        }
+
+        .explanation-content li {
+            margin-bottom: 2.43px;
+        }
+
+        .mechanism-diagram {
+            text-align: center;
+            margin: 9.72px 0;
+            padding: 6.48px;
+            background: var(--light);
+            border-radius: var(--border-radius);
+        }
+
+        .mechanism-diagram img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+        }
+
+        .key-concept {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 3.24px solid var(--primary);
+            padding: 6.48px;
+            margin: 6.48px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .key-concept-title {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 3.24px;
+            font-size: 0.567rem;
+        }
+
+        /* MCQ Detail Styles */
+        .mcq-detail-container {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 9.72px;
+            margin-bottom: 9.72px;
+            box-shadow: var(--shadow);
+        }
+
+        .mcq-question {
+            font-size: 0.648rem;
+            font-weight: 600;
+            margin-bottom: 6.48px;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        .mcq-options {
+            margin-bottom: 9.72px;
+        }
+
+        .mcq-option {
+            padding: 4.05px 6.48px;
+            margin-bottom: 3.24px;
+            border-radius: var(--border-radius);
+            background: var(--light);
+            font-size: 0.567rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border-left: 2.43px solid transparent;
+        }
+
+        .mcq-option:hover {
+            background: rgba(26, 86, 219, 0.05);
+        }
+
+        .mcq-option.selected {
+            border-left-color: var(--primary);
+            background: rgba(26, 86, 219, 0.1);
+        }
+
+        .mcq-option.correct {
+            border-left-color: var(--success);
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .mcq-option.incorrect {
+            border-left-color: #dc3545;
+            background: rgba(220, 53, 69, 0.1);
+        }
+
+        .mcq-explanation {
+            margin-top: 9.72px;
+            padding: 6.48px;
+            border-radius: var(--border-radius);
+            background: var(--light);
+            font-size: 0.486rem;
+            line-height: 1.4;
+            display: none;
+        }
+
+        .mcq-explanation.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .explanation-title {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4.05px;
+            font-size: 0.567rem;
+        }
+
+        .explanation-content {
+            color: var(--text-secondary);
+        }
+
+        .mcq-actions {
+            display: flex;
+            gap: 4.86px;
+            margin-top: 6.48px;
+        }
+
+        /* Progress Tracking */
+        .progress-section {
+            margin-top: 9.72px;
+            padding: 6.48px;
+            background: var(--light);
+            border-radius: var(--border-radius);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4.86px;
+        }
+
+        .progress-title {
+            font-size: 0.648rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .progress-stats {
+            font-size: 0.486rem;
+            color: var(--text-secondary);
+        }
+
+        .progress-bar {
+            height: 6.48px;
+            background: #e5e7eb;
+            border-radius: 3.24px;
+            overflow: hidden;
+            margin-bottom: 4.86px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--success);
+            border-radius: 3.24px;
+            transition: width 0.5s ease;
+        }
+
+        /* Welcome Animation - Enhanced */
+        .welcome-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #1e3a8a, #1a56db);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 1;
+            transition: opacity 0.8s ease;
+        }
+
+        .welcome-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .welcome-content {
+            text-align: center;
+            color: white;
+            padding: 12.15px;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 9.72px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4.86px 16.2px rgba(0, 0, 0, 0.2);
+        }
+
+        .welcome-content h2 {
+            font-size: 1.458rem;
+            margin-bottom: 9.72px;
+            background: linear-gradient(90deg, #ffd700, #ffed4e, #ffd700);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shimmer 2.5s infinite;
+        }
+
+        .welcome-content p {
+            font-size: 0.648rem;
+            margin-bottom: 12.15px;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+
+        .welcome-logo {
+            font-size: 2.025rem;
+            margin-bottom: 12.15px;
+            color: #ffd700;
+            text-shadow: 0 0 12.15px rgba(255, 215, 0, 0.5);
+            animation: pulseWelcome 1.5s infinite;
+        }
+
+        @keyframes pulseWelcome {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -100% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* WhatsApp Small Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 12.15px;
+            right: 12.15px;
+            background: #25D366;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.053rem;
+            box-shadow: 0 2.43px 6.48px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 3.24px 8.1px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .grid-3 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .main-nav {
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: var(--card-bg);
+                border-radius: var(--border-radius);
+                box-shadow: var(--shadow);
+                padding: 4.86px;
+                z-index: 100;
+                width: 162px;
+                display: none;
+            }
+            
+            .main-nav.active {
+                display: flex;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 4.05px;
+            }
+            
+            header {
+                padding: 4.86px;
+            }
+            
+            .logo h1 {
+                font-size: 0.81rem;
+            }
+            
+            .panel {
+                padding: 4.86px;
+            }
+            
+            .btn {
+                width: 100%;
+                margin-bottom: 2.43px;
+            }
+            
+            .panel-actions {
+                flex-direction: column;
+            }
+            
+            .welcome-content {
+                padding: 9.72px;
+                margin: 6.48px;
+            }
+            
+            .welcome-content h2 {
+                font-size: 1.053rem;
+            }
+            
+            .welcome-content p {
+                font-size: 0.567rem;
+            }
+            
+            .welcome-logo {
+                font-size: 1.62rem;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 3.24px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 1.62px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Animation -->
+    <div class="welcome-overlay" id="welcome-overlay">
+        <div class="welcome-content scale-in">
+            <div class="welcome-logo">
+                <i class="fas fa-flask"></i>
+            </div>
+            <h2>MedPlex Chemistry Portal</h2>
+            <p>Master Organic Chemistry with comprehensive topic-wise notes and MCQs for MDCAT preparation.</p>
+            <button class="btn btn-primary" id="start-btn" style="padding: 4.86px 9.72px; font-size: 0.648rem;">
+                Get Started <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- WhatsApp Small Button -->
+    <a href="https://whatsapp.com/channel/0029VbBeueg0QeajGumGWb0f" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div class="container">
+        <header>
+            <button class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="logo">
+                <h1>MedPlex Chemistry Portal</h1>
+                <p>Topic Wise Notes & MCQs for MDCAT</p>
+            </div>
+            
+            <div class="header-content">
+                <h1>Comprehensive Organic Chemistry Notes & Practice MCQs</h1>
+                <p>Master key organic chemistry concepts with detailed explanations and interactive questions for competitive exams</p>
+            </div>
+        </header>
+
+        <div class="nav-container">
+            <div class="nav-header">
+                <h2>Navigation</h2>
+                <button class="theme-toggle" id="theme-toggle">
+                    <span></span>
+                </button>
+            </div>
+            
+            <div class="main-nav" id="main-nav">
+                <button class="nav-btn active" data-tab="functional-groups">
+                    <i class="fas fa-atom"></i>
+                    <span>Functional Groups</span>
+                </button>
+                <button class="nav-btn" data-tab="homologous-series">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Homologous Series</span>
+                </button>
+                <button class="nav-btn" data-tab="classification">
+                    <i class="fas fa-sitemap"></i>
+                    <span>Classification</span>
+                </button>
+                <button class="nav-btn" data-tab="stereo-isomerism">
+                    <i class="fas fa-cube"></i>
+                    <span>Stereo Isomerism</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats Panel -->
+        <div class="stats-panel">
+            <div class="stat-item">
+                <div class="stat-value" id="functional-groups-mcqs">20</div>
+                <div class="stat-label">Functional Groups MCQs</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="homologous-series-mcqs">20</div>
+                <div class="stat-label">Homologous Series MCQs</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="classification-mcqs">20</div>
+                <div class="stat-label">Classification MCQs</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="stereo-isomerism-mcqs">20</div>
+                <div class="stat-label">Stereo Isomerism MCQs</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="total-mcqs">80</div>
+                <div class="stat-label">Total MCQs</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="completed-mcqs">0</div>
+                <div class="stat-label">Completed</div>
+            </div>
+        </div>
+
+        <!-- Functional Groups Tab -->
+        <div class="tab-content active" id="functional-groups-tab">
+            <!-- Explanation Section -->
+            <div class="explanation-section fade-in">
+                <div class="explanation-header">
+                    <div class="explanation-icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <div class="explanation-title">Functional Groups in Organic Chemistry</div>
+                </div>
+                
+                <div class="explanation-content">
+                    <h4>What are Functional Groups?</h4>
+                    <p>Functional groups are specific groups of atoms within molecules that are responsible for the characteristic chemical reactions of those molecules. They determine the chemical properties and reactivity of organic compounds, regardless of the size and complexity of the molecule.</p>
+                    
+                    <div class="key-concept">
+                        <div class="key-concept-title">Key Concept: Reactivity Centers</div>
+                        <p>Functional groups serve as the reactive centers in organic molecules. While the carbon skeleton provides the basic structure, it's the functional groups that determine how the molecule will interact with other substances. This is why compounds with the same functional group often undergo similar chemical reactions.</p>
+                    </div>
+                    
+                    <h4>Common Functional Groups:</h4>
+                    <ol>
+                        <li><strong>Hydroxyl Group (-OH):</strong> Found in alcohols. Makes compounds polar and capable of hydrogen bonding. Alcohols have higher boiling points than comparable hydrocarbons due to hydrogen bonding.</li>
+                        <li><strong>Carbonyl Group (C=O):</strong> Present in aldehydes and ketones. Highly polar and reactive. Aldehydes have the carbonyl at the end of the carbon chain, while ketones have it in the middle.</li>
+                        <li><strong>Carboxyl Group (-COOH):</strong> Characteristic of carboxylic acids. Can donate protons (acidic) and participate in hydrogen bonding. Responsible for the sour taste of many organic acids.</li>
+                        <li><strong>Amino Group (-NH2):</strong> Found in amines. Can accept protons (basic) and participate in hydrogen bonding. Important in biological molecules like amino acids.</li>
+                        <li><strong>Ester Group (-COO-):</strong> Formed from the reaction of carboxylic acids and alcohols. Responsible for the pleasant odors of many fruits and flowers.</li>
+                        <li><strong>Ether Group (-O-):</strong> Oxygen atom connected to two alkyl groups. Relatively unreactive but important as solvents. Diethyl ether was one of the first anesthetics.</li>
+                        <li><strong>Halogen Groups (-X):</strong> Include -F, -Cl, -Br, -I. Make compounds more polar and reactive. Often used in substitution and elimination reactions.</li>
+                        <li><strong>Sulfhydryl Group (-SH):</strong> Found in thiols. Can form disulfide bonds important in protein structure. Responsible for the distinctive odor of compounds like garlic.</li>
+                        <li><strong>Phosphate Group (-PO4):</strong> Important in biological molecules like DNA, RNA, and ATP. Can store and transfer energy in cells.</li>
+                        <li><strong>Nitro Group (-NO2):</strong> Strong electron-withdrawing group. Found in explosives like TNT and in some pharmaceuticals.</li>
+                    </ol>
+                    
+                    <div class="key-concept">
+                        <div class="key-concept-title">Key Concept: Priority Rules</div>
+                        <p>When naming organic compounds with multiple functional groups, we follow specific priority rules. The highest priority functional group determines the suffix of the compound name, while lower priority groups are named as prefixes. The priority order is: carboxylic acids > esters > amides > nitriles > aldehydes > ketones > alcohols > amines > ethers > halogens > alkyl groups.</p>
+                    </div>
+                    
+                    <h4>Properties Influenced by Functional Groups:</h4>
+                    <ul>
+                        <li><strong>Boiling and Melting Points:</strong> Functional groups that can form hydrogen bonds (like -OH, -NH2, -COOH) significantly increase boiling points compared to hydrocarbons of similar molecular weight.</li>
+                        <li><strong>Solubility:</strong> Polar functional groups increase water solubility, while non-polar groups decrease it. The "like dissolves like" principle applies.</li>
+                        <li><strong>Acidity/Basicity:</strong> Functional groups determine whether a compound acts as an acid or base. Carboxylic acids are acidic, amines are basic.</li>
+                        <li><strong>Reactivity:</strong> Different functional groups undergo characteristic reactions. Carbonyl groups are susceptible to nucleophilic attack, while alkenes undergo addition reactions.</li>
+                        <li><strong>Spectroscopic Properties:</strong> Functional groups have characteristic infrared absorptions and NMR chemical shifts, making them identifiable through spectroscopy.</li>
+                    </ul>
+                    
+                    <div class="key-concept">
+                        <div class="key-concept-title">Key Concept: Isosteres</div>
+                        <p>Isosteres are atoms, ions, or molecules with similar size and electronic properties. In medicinal chemistry, isosteric replacement (substituting one functional group with another that has similar properties) is a common strategy to modify drug properties while maintaining biological activity. For example, replacing a -CH3 group with -CF3 can improve metabolic stability without significantly changing the molecule's shape or electronic properties.</p>
+                    </div>
+                    
+                    <h4>Identification and Nomenclature:</h4>
+                    <p>Functional groups are identified through chemical tests and spectroscopic methods. In IUPAC nomenclature, the presence of functional groups determines the suffix used in naming the compound. For example, alcohols use the suffix "-ol", aldehydes use "-al", and carboxylic acids use "-oic acid".</p>
+                    
+                    <div class="key-concept">
+                        <div class="key-concept-title">Key Concept: Protecting Groups</div>
+                        <p>In organic synthesis, protecting groups are temporarily added to functional groups to prevent them from reacting during specific steps of a synthesis. For example, the hydroxyl group in an alcohol can be protected as a silyl ether, which is stable under many reaction conditions but can be easily removed later. This strategy allows chemists to perform multi-step syntheses with precise control over which functional groups react at each stage.</p>
+                    </div>
+                    
+                    <h4>Biological Significance:</h4>
+                    <p>Functional groups are crucial in biochemistry. The specific arrangement of functional groups in enzymes determines their catalytic activity. In pharmaceuticals, functional groups influence drug absorption, distribution, metabolism, and excretion (ADME properties). Understanding functional groups is essential for drug design and understanding biological processes at the molecular level.</p>
+                    
+                    <div class="mechanism-diagram">
+                        <p><strong>Functional Group Interconversion:</strong></p>
+                        <p>Alcohol → [Oxidation] → Aldehyde → [Further Oxidation] → Carboxylic Acid</p>
+                        <p>Carboxylic Acid + Alcohol → [Esterification] → Ester + Water</p>
+                    </div>
+                    
+                    <h4>Industrial Applications:</h4>
+                    <p>Functional groups determine the industrial uses of organic compounds. For example, compounds with hydroxyl groups are used as solvents and antifreeze, while compounds with carboxyl groups are used in food preservation and pharmaceuticals. The petrochemical industry relies on functional group transformations to convert crude oil into valuable products.</p>
+                </div>
+            </div>
+            
+            <!-- Progress Section -->
+            <div class="progress-section">
+                <div class="progress-header">
+                    <div class="progress-title">Functional Groups MCQs Progress</div>
+                    <div class="progress-stats"><span id="functional-groups-completed">0</span>/20 completed</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="functional-groups-progress" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <!-- MCQs Section -->
+            <div class="panel fade-in">
+                <div class="panel-header">
+                    <h3 class="panel-title"><i class="fas fa-atom"></i> Functional Groups MCQs</h3>
+                    <div class="panel-actions">
+                        <button class="btn btn-primary" id="refresh-functional-groups">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="grid grid-2" id="functional-groups-mcqs-container">
+                    <!-- MCQs will be populated here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Homologous Series Tab -->
+        <div class="tab-content" id="homologous-series-tab">
+            <!-- Explanation Section -->
+            <div class="explanation-section fade-in">
+                <div class="explanation-header">
+                    <div class="explanation-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="explanation-title">Homologous Series in Organic Chemistry</div>
+                </div>
+                
+                <div class="explanation-content">
+                    <h4>What is a Homologous Series?</h4>
+                    <p>A homologous series is a family of organic compounds with the same functional group and similar chemical properties, where each member differs from the next by a -CH2- unit. Members of a homologous series can be represented by a general molecular formula and show a gradual change in physical properties.</p>
+                    
+                    <div class="key-concept">
+                        <div class="key-concept-title">Key Concept: Gradual Change</div>
+                        <p>The concept of homologous series illustrates the principle of gradual change in organic chemistry. As we move up a homologous series, each additional -CH2- unit causes predictable changes in physical properties like boiling point, melting point, and density, while the chemical properties remain similar due to the presence of the same functional group.</p>
+                    </div>
+                    
+                    <h4>Characteristics of Homologous Series:</h4>
+                    <ol>
+                        <li><strong>Same Functional Group:</strong> All members of a homologous series contain the same functional group, which determines their chemical behavior.</li>
+                        <li><strong>General Molecular Formula:</strong> Members can be represented by a general formula. For example, alkanes have the general formula CnH2n+2.</li>
+                        <li><strong>Regular Pattern of Physical Properties:</strong> Physical properties change gradually with increasing molecular mass. Boiling points typically increase by about 20-30°C for each additional -CH2- group.</li>
+                        <li><strong>Similar Chemical Properties:</strong> Members undergo similar chemical reactions due to the presence of the same functional group.</li>
+                        <li><strong>Method of Preparation:</strong> Members can often be prepared by similar methods.</li>
+                        <li><strong>Gradation in Physical Properties:</strong> There is a gradual change in physical properties like melting point, boiling point, density, and solubility.</li>
+                        <li><strong>Difference in Molecular Formula:</strong> Successive members differ by -CH2- unit, which corresponds to a mass difference of 14 atomic mass units.</li>
+                        <li><strong>Isomerism:</strong> Higher members show isomerism due to different arrangements of carbon atoms.</li>
+                        <li><strong>Combustion Behavior:</strong> All members burn in air or oxygen to give carbon dioxide and water.</li>
+                        <li><strong>Systematic Nomenclature:</strong> Members follow systematic IUPAC naming rules with prefixes indicating the number of carbon atoms.</li>
+                    </ol>
+                    
+                    <div class="key-concept">
+                        <div class="key-concept-title">Key Concept: Homologous Increment</div>
+                        <p>The -CH2- unit that distinguishes successive members of a homologous series is called the homologous increment. This consistent structural difference is responsible for the predictable changes in physical properties. The effect of each additional -CH2- group becomes relatively smaller as the molecular size increases, which is why the increase in boiling point per -CH2- group decreases in higher homologs.</p>
+                    </div>
+                    
+                    <h4>Common Homologous Series:</h4>
+                    <ul>
+                        <li><strong>Alkanes (CnH2n+2):</strong> Saturated hydrocarbons with single bonds only. Used as fuels and lubricants. Examples: methane (CH4), ethane (C2H6), propane (C3H8).</li>
+                        <li><strong>Alkenes (CnH2n):</strong> Unsaturated hydrocarbons with at least one double bond. Undergo addition reactions. Examples: ethene (C2H4), propene (C3H6), butene (C4H8).</li>
+                        <li><strong>Alkynes (CnH2n-2):</strong> Unsaturated hydrocarbons with at least one triple bond. Examples: ethyne (C2H2), propyne (C3H4), butyne (C4H6).</li>
+                        <li><strong>Alcohols (CnH2n+1OH):</strong> Contain the hydroxyl (-OH) functional group. Used as solvents, antiseptics, and fuels. Examples: methanol (CH3OH), ethanol (C2H5OH), propanol (C3H7OH).</li>
+                        <li><strong>Aldehydes (CnH2n+1CHO):</strong> Contain the carbonyl group at the end of the carbon chain. Used in perfumes and synthetic resins. Examples: methanal (HCHO), ethanal (CH3CHO), propanal (C2H5CHO).</li>
+                        <li><strong>Ketones (CnH2n+1COCnH2n+1):</strong> Contain the carbonyl group in the middle of the carbon chain. Used as solvents and in pharmaceuticals. Examples: propanone (CH3COCH3), butanone (CH3COC2H5).</li>
+                        <li><strong>Carboxylic Acids (CnH2n+1COOH):</strong> Contain the carboxyl (-COOH) group. Used in food preservation and pharmaceuticals. Examples: methanoic acid (HCOOH), ethanoic acid (CH3COOH), propanoic acid (C2H5COOH).</li>
+                        <li><strong>Esters (CnH2n+1COOCmH2m+1):</strong> Formed from alcohols and carboxylic acids. Used as flavoring agents and solvents. Examples: methyl methanoate (HCOOCH3), ethyl ethanoate (CH3COOC2H5).</li>
+                        <li><strong>Amines (CnH2n+1NH2):</strong> Contain the amino (-NH2) group. Used in dyes, drugs, and polymers. Examples: methylamine (CH3NH2), ethylamine (C2H5NH2).</li>
+                        <li><strong>Haloalkanes (CnH2n+1X):</strong> Contain halogen atoms. Used as refrigerants, solvents, and anesthetics. Examples: chloromethane (CH3Cl), chloroethane (C2H5Cl).</li>
+                    </ul>
+                    
+                    <div class="key-concept">
+                        <div class="key-concept-title">Key Concept: Physical Property Trends</div>
+                        <p>The gradual change in physical properties within a homologous series follows predictable patterns. Boiling points increase with molecular mass due to stronger London dispersion forces. Solubility in water decreases with increasing chain length as the non-polar hydrocarbon portion becomes more dominant. Density typically increases up to a certain point then levels off. These trends are consistent across different homologous series and provide a useful framework for predicting properties of unknown compounds.</p>
+                    </div>
+                    
+                    <h4>Significance of Homologous Series:</h4>
+                    <p>The concept of homologous series is fundamental to organic chemistry because it allows for systematic study and prediction of properties. By examining a few members of a series, chemists can predict the properties and behavior of other members. This principle is extensively used in drug design, materials science, and industrial chemistry to develop new compounds with desired properties.</p>
+                    
+                    <div class="mechanism-diagram">
+                        <p><strong>Homologous Series Pattern:</strong></p>
+                        <p>Methane (CH4) → Ethane (C2H6) → Propane (C3H8) → Butane (C4H10)</p>
+                        <p>Each step adds -CH2- to the chain</p>
+                    </div>
+                    
+                    <h4>Educational Importance:</h4>
+                    <p>In chemistry education, homologous series provide an excellent framework for understanding organic chemistry. Students can learn the properties and reactions of one member and apply this knowledge to the entire series. This approach simplifies the vast field of organic chemistry and helps in recognizing patterns and relationships between different compounds.</p>
+                </div>
+            </div>
+            
+            <!-- Progress Section -->
+            <div class="progress-section">
+                <div class="progress-header">
+                    <div class="progress-title">Homologous Series MCQs Progress</div>
+                    <div class="progress-stats"><span id="homologous-series-completed">0</span>/20 completed</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="homologous-series-progress" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <!-- MCQs Section -->
+            <div class="panel fade-in">
+                <div class="panel-header">
+                    <h3 class="panel-title"><i class="fas fa-layer-group"></i> Homologous Series MCQs</h3>
+                    <div class="panel-actions">
+                        <button class="btn btn-primary" id="refresh-homologous-series">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="grid grid-2" id="homologous-series-mcqs-container">
+                    <!-- MCQs will be populated here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Classification of Organic Compounds Tab -->
+        <div class="tab-content" id="classification-tab">
+            <!-- Explanation Section -->
+            <div class="explanation-section fade-in">
+                <div class="explanation-header">
+                    <div class="explanation-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <div class="explanation-title">Classification of Organic Compounds</div>
+                </div>
+                
+                <div class="explanation-content">
+                    <h4>Introduction to Classification</h4>
+                    <p>Organic compounds are classified based on their structure and functional groups to systematically organize the vast number of compounds and predict their properties and reactions. This classification helps in understanding relationships between different compounds and simplifies the study of organic chemistry.</p>
+                    
+                    <div class="key-concept">
+                        <div class="key-concept-title">Key Concept: Structural Organization</div>
+                        <p>The classification of organic compounds is based on recognizing patterns in molecular structure. By grouping compounds with similar structural features, we can predict their chemical behavior, physical properties, and potential applications. This systematic approach is fundamental to both understanding and advancing organic chemistry.</p>
+                    </div>
+                    
+                    <h4>Classification Based on Carbon Skeleton:</h4>
+                    <ol>
+                        <li><strong>Acyclic or Open Chain Compounds:</strong> These compounds contain open chains of carbon atoms. They can be straight-chain (normal) or branched-chain compounds. Examples: propane, isobutane.</li>
+                        <li><strong>Cyclic or Closed Chain Compounds:</strong> These compounds contain one or more closed chains or rings of atoms. They are further divided into:
+                            <ul>
+                                <li><strong>Homocyclic or Carbocyclic:</strong> Rings contain only carbon atoms. These include alicyclic compounds (cycloalkanes, cycloalkenes) and aromatic compounds (benzene and its derivatives).</li>
+                                <li><strong>Heterocyclic:</strong> Rings contain at least one atom other than carbon (heteroatom like O, N, S). Examples: furan, pyridine, thiophene.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Alicyclic Compounds:</strong> Cyclic compounds that resemble aliphatic compounds in their properties. Examples: cyclopropane, cyclohexane.</li>
+                        <li><strong>Aromatic Compounds:</strong> Contain one or more benzene rings or have aromatic character. They undergo substitution reactions rather than addition reactions. Examples: benzene, naphthalene, toluene.</li>
+                        <li><strong>Benzenoid Aromatics:</strong> Contain at least one benzene ring. Examples: phenol, aniline, benzoic acid.</li>
+                        <li><strong>Non-benzenoid Aromatics:</strong> Aromatic compounds that don't contain benzene rings but have aromatic character due to delocalized electrons. Examples: cyclopentadienyl anion, tropolone.</li>
+                        <li><strong>Heterocyclic Aromatics:</strong> Aromatic compounds containing heteroatoms in the ring. Examples: pyridine, pyrrole, thiophene.</li>
+                        <li><strong>Saturated Compounds:</strong> Contain only single bonds between carbon atoms. Examples: alkanes, cycloalkanes.</li>
+                        <li><strong>Unsaturated Compounds:</strong> Contain double or triple bonds between carbon atoms. Examples: alkenes, alkynes, arenes.</li>
+                        <li><strong>Aliphatic Compounds:</strong> Open-chain compounds (both saturated and unsaturated) and related cyclic compounds. Examples: methane, ethylene, acetylene.</li>
+                    </ol>
+                    
+                    <div class="key-concept">
+                        <div class="key-concept-title">Key Concept: Functional Group Classification</div>
+                        <p>Classification based on functional groups is particularly useful because compounds with the same functional group undergo similar chemical reactions, regardless of the size of their carbon skeleton. This allows chemists to predict the behavior of unfamiliar compounds by recognizing their functional groups. For example, all alcohols (-OH group) can be oxidized to carbonyl compounds, and all carboxylic acids (-COOH group) react with bases to form salts.</p>
+                    </div>
+                    
+                    <h4>Classification Based on Functional Groups:</h4>
+                    <ul>
+                        <li><strong>Hydrocarbons:</strong> Compounds containing only carbon and hydrogen. Further classified into alkanes, alkenes, alkynes, and arenes.</li>
+                        <li><strong>Halogen Derivatives:</strong> Contain halogen atoms (F, Cl, Br, I) as functional groups. Examples: alkyl halides, aryl halides.</li>
+                        <li><strong>Oxygen-Containing Compounds:</strong>
+                            <ul>
+                                <li>Alcohols (-OH)</li>
+                                <li>Phenols (Ar-OH)</li>
+                                <li>Ethers (-O-)</li>
+                                <li>Aldehydes (-CHO)</li>
+                                <li>Ketones (>C=O)</li>
+                                <li>Carboxylic Acids (-COOH)</li>
+                                <li>Esters (-COOR)</li>
+                                <li>Acid Anhydrides (-CO-O-CO-)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Nitrogen-Containing Compounds:</strong>
+                            <ul>
+                                <li>Nitro Compounds (-NO2)</li>
+                                <li>Amines (-NH2, -NHR, -NR2)</li>
+                                <li>Amides (-CONH2)</li>
+                                <li>Cyanides or Nitriles (-CN)</li>
+                                <li>Isocyanides (-NC)</li>
+                                <li>Diazonium Salts (Ar-N2+X-)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Sulfur-Containing Compounds:</strong>
+                            <ul>
+                                <li>Thiols or Mercaptans (-SH)</li>
+                                <li>Sulfides or Thioethers (-S-)</li>
+                                <li>Sulfonic Acids (-SO3H)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Organometallic Compounds:</strong> Contain carbon-metal bonds. Examples: Grignard reagents (R-Mg-X), organolithium compounds (R-Li).</li>
+                        <li><strong>Phosphorus-Containing Compounds:</strong> Important in biological systems. Examples: phospholipids, nucleotides.</li>
+                    </ul>
+                    
+                    <div class="key-concept">
+                        <div class="key-concept-title">Key Concept: Hybridization and Classification</div>
+                        <p>The hybridization of carbon atoms provides another dimension for classifying organic compounds. sp³ hybridized carbons form tetrahedral structures (alkanes), sp² hybridized carbons form trigonal planar structures with double bonds (alkenes, carbonyl compounds), and sp hybridized carbons form linear structures with triple bonds (alkynes). This classification helps in understanding molecular geometry and reactivity patterns.</p>
+                    </div>
+                    
+                    <h4>Special Classification Categories:</h4>
+                    <p>Beyond the basic classification systems, organic compounds can be categorized based on specific characteristics:</p>
+                    <ul>
+                        <li><strong>Natural Products:</strong> Compounds obtained from natural sources like plants, animals, and microorganisms. Examples: alkaloids, terpenes, steroids.</li>
+                        <li><strong>Synthetic Compounds:</strong> Man-made compounds not found in nature. Examples: plastics, synthetic drugs, dyes.</li>
+                        <li><strong>Biomolecules:</strong> Compounds essential for life processes. Examples: carbohydrates, proteins, lipids, nucleic acids.</li>
+                        <li><strong>Polymers:</strong> Large molecules composed of repeating structural units (monomers). Examples: polyethylene, nylon, DNA.</li>
+                        <li><strong>Isomers:</strong> Compounds with the same molecular formula but different arrangements of atoms. Further classified into structural isomers and stereoisomers.</li>
+                    </ul>
+                    
+                    <div class="mechanism-diagram">
+                        <p><strong>Classification Hierarchy:</strong></p>
+                        <p>Organic Compounds → Open Chain / Closed Chain → Saturated / Unsaturated → Functional Group Classes</p>
+                    </div>
+                    
+                    <h4>Practical Applications of Classification:</h4>
+                    <p>The systematic classification of organic compounds has numerous practical applications:</p>
+                    <ul>
+                        <li><strong>Drug Discovery:</strong> Helps in identifying structure-activity relationships and designing new pharmaceuticals.</li>
+                        <li><strong>Materials Science:</strong> Guides the development of new materials with specific properties.</li>
+                        <li><strong>Environmental Chemistry:</strong> Assists in understanding the behavior and fate of organic pollutants.</li>
+                        <li><strong>Forensic Science:</strong> Aids in identifying unknown substances found at crime scenes.</li>
+                        <li><strong>Industrial Chemistry:</strong> Facilitates the development of new synthetic routes and processes.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Progress Section -->
+            <div class="progress-section">
+                <div class="progress-header">
+                    <div class="progress-title">Classification MCQs Progress</div>
+                    <div class="progress-stats"><span id="classification-completed">0</span>/20 completed</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="classification-progress" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <!-- MCQs Section -->
+            <div class="panel fade-in">
+                <div class="panel-header">
+                    <h3 class="panel-title"><i class="fas fa-sitemap"></i> Classification of Organic Compounds MCQs</h3>
+                    <div class="panel-actions">
+                        <button class="btn btn-primary" id="refresh-classification">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="grid grid-2" id="classification-mcqs-container">
+                    <!-- MCQs will be populated here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Stereo Isomerism Tab -->
+        <div class="tab-content" id="stereo-isomerism-tab">
+            <!-- Explanation Section -->
+            <div class="explanation-section fade-in">
+                <div class="explanation-header">
+                    <div class="explanation-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <div class="explanation-title">Stereoisomerism in Organic Chemistry</div>
+                </div>
+                
+                <div class="explanation-content">
+                    <h4>What is Stereoisomerism?</h4>
+                    <p>Stereoisomerism is a form of isomerism where molecules have the same molecular formula and sequence of bonded atoms (constitution), but differ in the three-dimensional orientations of their atoms in space. Unlike structural isomers, stereoisomers have atoms connected in the same order but arranged differently in space.</p>
+                    
+                    <div class="key-concept">
+                        <div class="key-concept-title">Key Concept: Spatial Arrangement</div>
+                        <p>Stereoisomerism emphasizes that the spatial arrangement of atoms in a molecule is as important as the connectivity of atoms. Molecules that are stereoisomers are mirror images or can be interconverted by rotation around single bonds (in the case of conformers). This concept is crucial for understanding molecular properties, biological activity, and chemical reactivity.</p>
+                    </div>
+                    
+                    <h4>Types of Stereoisomerism:</h4>
+                    <ol>
+                        <li><strong>Geometrical Isomerism (Cis-Trans Isomerism):</strong> Occurs due to restricted rotation around a bond, commonly a double bond or in cyclic compounds. In alkenes, cis isomers have similar groups on the same side, while trans isomers have them on opposite sides.</li>
+                        <li><strong>Optical Isomerism:</strong> Arises due to chirality - the property of a molecule that is not superimposable on its mirror image. Chiral molecules rotate plane-polarized light and exist as enantiomers.</li>
+                        <li><strong>Conformational Isomerism:</strong> Results from rotation around single bonds. Different spatial arrangements of atoms that can be interconverted by rotation about single bonds. Examples: staggered and eclipsed conformations of ethane.</li>
+                        <li><strong>Enantiomerism:</strong> A type of optical isomerism where two molecules are non-superimposable mirror images of each other. They have identical physical properties except for their interaction with plane-polarized light.</li>
+                        <li><strong>Diastereomerism:</strong> Stereoisomers that are not mirror images of each other. They have different physical properties and can be separated by conventional methods.</li>
+                        <li><strong>Meso Compounds:</strong> Achiral compounds that contain chiral centers but have a plane of symmetry, making them optically inactive.</li>
+                        <li><strong>Atropisomerism:</strong> A type of stereoisomerism resulting from hindered rotation about a single bond where the energy barrier is high enough to allow isolation of the conformers.</li>
+                        <li><strong>Topoisomerism:</strong> Isomerism that arises from different topological forms of molecules, particularly important in DNA structure.</li>
+                        <li><strong>Anomerism:</strong> A special type of stereoisomerism in carbohydrate chemistry, referring to stereoisomers that differ in configuration at the hemiacetal or hemiketal carbon.</li>
+                        <li><strong>Epimerism:</strong> Stereoisomers that differ in configuration at only one stereogenic center. Common in carbohydrate chemistry.</li>
+                    </ol>
+                    
+                    <div class="key-concept">
+                        <div class="key-concept-title">Key Concept: Chirality</div>
+                        <p>Chirality is the fundamental concept underlying optical isomerism. A molecule is chiral if it cannot be superimposed on its mirror image. The most common cause of chirality is the presence of a chiral center, typically a carbon atom with four different substituents. Chiral molecules exist as enantiomer pairs, which have identical physical properties except for their interaction with plane-polarized light and other chiral molecules.</p>
+                    </div>
+                    
+                    <h4>Chirality and Chiral Centers:</h4>
+                    <ul>
+                        <li><strong>Chiral Center:</strong> A carbon atom bonded to four different groups. Also called a stereocenter or asymmetric center.</li>
+                        <li><strong>Enantiomers:</strong> Pair of molecules that are non-superimposable mirror images. They have identical physical properties except for optical rotation.</li>
+                        <li><strong>Diastereomers:</strong> Stereoisomers that are not mirror images. They have different physical properties.</li>
+                        <li><strong>Racemic Mixture:</strong> A 1:1 mixture of two enantiomers. It is optically inactive.</li>
+                        <li><strong>Optical Activity:</strong> The ability of a chiral compound to rotate the plane of polarized light.</li>
+                        <li><strong>Specific Rotation:</strong> A quantitative measure of optical activity, defined as the angle of rotation of plane-polarized light per unit concentration and path length.</li>
+                        <li><strong>Absolute Configuration:</strong> The actual spatial arrangement of atoms in a chiral molecule, denoted by R/S system.</li>
+                        <li><strong>Relative Configuration:</strong> The configuration of a chiral center relative to another chiral center in the same molecule.</li>
+                        <li><strong>Fischer Projection:</strong> A two-dimensional representation of a three-dimensional organic molecule with chiral centers.</li>
+                        <li><strong>Cahn-Ingold-Prelog Rules:</strong> A set of rules for assigning R/S configuration to chiral centers.</li>
+                    </ul>
+                    
+                    <div class="key-concept">
+                        <div class="key-concept-title">Key Concept: Biological Significance</div>
+                        <p>Stereoisomerism has profound biological implications. Biological systems are inherently chiral, with most biomolecules (amino acids, sugars) existing as single enantiomers. As a result, different enantiomers of a drug may have dramatically different biological activities. For example, one enantiomer of thalidomide is a sedative, while the other causes birth defects. This is why modern drug development places great emphasis on stereochemistry.</p>
+                    </div>
+                    
+                    <h4>Geometrical Isomerism in Detail:</h4>
+                    <p>Geometrical isomerism occurs when there is restricted rotation around a bond, most commonly a double bond or in cyclic compounds. In the E/Z notation system for alkenes:</p>
+                    <ul>
+                        <li><strong>E Isomer (Entgegen):</strong> The higher priority groups are on opposite sides of the double bond.</li>
+                        <li><strong>Z Isomer (Zusammen):</strong> The higher priority groups are on the same side of the double bond.</li>
+                    </ul>
+                    <p>In cyclic compounds, substituents can be cis (on the same side of the ring) or trans (on opposite sides of the ring).</p>
+                    
+                    <div class="key-concept">
+                        <div class="key-concept-title">Key Concept: Conformational Analysis</div>
+                        <p>Conformational isomerism deals with different spatial arrangements of atoms that can be interconverted by rotation about single bonds. Unlike other types of stereoisomerism, conformers are generally not separable at room temperature because they interconvert rapidly. However, understanding conformational preferences is crucial for explaining reactivity patterns, molecular stability, and biological function. The study of conformations helps explain why some reactions are favored over others and why molecules adopt specific shapes.</p>
+                    </div>
+                    
+                    <h4>Methods for Studying Stereoisomerism:</h4>
+                    <ul>
+                        <li><strong>Polarimetry:</strong> Measures optical activity and specific rotation.</li>
+                        <li><strong>X-ray Crystallography:</strong> Determines absolute configuration by analyzing crystal structures.</li>
+                        <li><strong>NMR Spectroscopy:</strong> Can distinguish between diastereomers and sometimes enantiomers using chiral shift reagents.</li>
+                        <li><strong>Chromatography:</strong> Chiral chromatography can separate enantiomers using chiral stationary phases.</li>
+                        <li><strong>Chemical Methods:</strong> Converting enantiomers to diastereomers for separation and analysis.</li>
+                    </ul>
+                    
+                    <div class="mechanism-diagram">
+                        <p><strong>Stereoisomerism Classification:</strong></p>
+                        <p>Stereoisomers → Enantiomers (mirror images) / Diastereomers (non-mirror images)</p>
+                        <p>Diastereomers → Geometrical Isomers / Conformers / Meso Compounds</p>
+                    </div>
+                    
+                    <h4>Importance in Pharmaceutical Chemistry:</h4>
+                    <p>Stereochemistry is critically important in pharmaceutical chemistry because:</p>
+                    <ul>
+                        <li>Different enantiomers may have different pharmacological activities</li>
+                        <li>One enantiomer may be therapeutically active while the other is inactive or toxic</li>
+                        <li>Enantiomers may have different metabolic pathways and rates</li>
+                        <li>Regulatory agencies often require enantiopure drugs</li>
+                        <li>Understanding stereochemistry helps in drug design and optimization</li>
+                    </ul>
+                    
+                    <h4>Advanced Concepts in Stereochemistry:</h4>
+                    <p>Beyond basic stereoisomerism, several advanced concepts are important:</p>
+                    <ul>
+                        <li><strong>Chiral Auxiliaries:</strong> Temporary chiral groups used to control stereochemistry in synthesis.</li>
+                        <li><strong>Asymmetric Synthesis:</strong> Chemical reactions that produce stereoisomeric products in unequal amounts.</li>
+                        <li><strong>Kinetic Resolution:</strong> A process where enantiomers react at different rates with a chiral reagent.</li>
+                        <li><strong>Dynamic Kinetic Resolution:</strong> Combines in situ racemization with kinetic resolution.</li>
+                        <li><strong>Atropisomerism:</strong> Stereoisomerism resulting from restricted rotation about single bonds where the barrier to rotation is high enough to allow isolation of conformers.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Progress Section -->
+            <div class="progress-section">
+                <div class="progress-header">
+                    <div class="progress-title">Stereo Isomerism MCQs Progress</div>
+                    <div class="progress-stats"><span id="stereo-isomerism-completed">0</span>/20 completed</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="stereo-isomerism-progress" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <!-- MCQs Section -->
+            <div class="panel fade-in">
+                <div class="panel-header">
+                    <h3 class="panel-title"><i class="fas fa-cube"></i> Stereo Isomerism MCQs</h3>
+                    <div class="panel-actions">
+                        <button class="btn btn-primary" id="refresh-stereo-isomerism">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="grid grid-2" id="stereo-isomerism-mcqs-container">
+                    <!-- MCQs will be populated here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Tracking Tab -->
+        <div class="tab-content" id="progress-tab">
+            <div class="panel fade-in">
+                <div class="panel-header">
+                    <h3 class="panel-title"><i class="fas fa-chart-line"></i> Progress Tracking</h3>
+                </div>
+                
+                <div class="explanation-section">
+                    <div class="explanation-header">
+                        <div class="explanation-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="explanation-title">Your Learning Progress</div>
+                    </div>
+                    
+                    <div class="explanation-content">
+                        <p>Track your progress as you work through the MCQs for all four organic chemistry topics.</p>
+                        
+                        <div class="progress-section" style="margin-top: 12.15px;">
+                            <div class="progress-header">
+                                <div class="progress-title">Overall Progress</div>
+                                <div class="progress-stats"><span id="overall-completed">0</span>/80 completed</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="overall-progress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 9.72px; margin-top: 12.15px;">
+                            <div>
+                                <div class="progress-header">
+                                    <div class="progress-title">Functional Groups</div>
+                                    <div class="progress-stats"><span id="functional-groups-summary">0</span>/20</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="functional-groups-summary-progress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="progress-header">
+                                    <div class="progress-title">Homologous Series</div>
+                                    <div class="progress-stats"><span id="homologous-series-summary">0</span>/20</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="homologous-series-summary-progress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="progress-header">
+                                    <div class="progress-title">Classification</div>
+                                    <div class="progress-stats"><span id="classification-summary">0</span>/20</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="classification-summary-progress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="progress-header">
+                                    <div class="progress-title">Stereo Isomerism</div>
+                                    <div class="progress-stats"><span id="stereo-isomerism-summary">0</span>/20</div>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="stereo-isomerism-summary-progress" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 12.15px; text-align: center;">
+                            <button class="btn btn-primary" id="reset-progress">
+                                <i class="fas fa-redo"></i> Reset Progress
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 MedPlex Chemistry Portal. All rights reserved.</p>
+                <p>Designed for effective learning of organic chemistry concepts for MDCAT preparation</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Functional Groups MCQs - 20 questions
+        const functionalGroupsMCQs = [
+            {
+                id: 1,
+                question: "Which functional group is responsible for the acidic properties of organic compounds?",
+                options: [
+                    "Hydroxyl group (-OH)",
+                    "Carbonyl group (C=O)",
+                    "Carboxyl group (-COOH)",
+                    "Amino group (-NH2)"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "The carboxyl group (-COOH) is responsible for acidic properties because it can donate a proton (H+) in aqueous solution, forming the carboxylate ion (-COO-). This makes carboxylic acids weak acids with pKa values typically around 3-5.",
+                    incorrect: {
+                        0: "The hydroxyl group in alcohols is not acidic; alcohols are neutral compounds (pKa ~15-16).",
+                        1: "The carbonyl group itself is not acidic; it's the presence of certain atoms near it that can create acidity.",
+                        3: "The amino group is basic, not acidic; it can accept a proton to form -NH3+."
+                    }
+                }
+            },
+            {
+                id: 2,
+                question: "Which compound contains an ester functional group?",
+                options: [
+                    "CH3CH2OH",
+                    "CH3COOCH3",
+                    "CH3COOH",
+                    "CH3CHO"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "CH3COOCH3 (methyl acetate) contains an ester functional group (-COO-). Esters are formed by the reaction of carboxylic acids with alcohols and have the general formula RCOOR'.",
+                    incorrect: {
+                        0: "CH3CH2OH is ethanol, which contains an alcohol functional group (-OH).",
+                        2: "CH3COOH is acetic acid, which contains a carboxylic acid functional group (-COOH).",
+                        3: "CH3CHO is acetaldehyde, which contains an aldehyde functional group (-CHO)."
+                    }
+                }
+            },
+            {
+                id: 3,
+                question: "What is the priority order of functional groups in IUPAC nomenclature?",
+                options: [
+                    "Carboxylic acid > Alcohol > Aldehyde > Ketone",
+                    "Carboxylic acid > Aldehyde > Ketone > Alcohol",
+                    "Alcohol > Carboxylic acid > Aldehyde > Ketone",
+                    "Aldehyde > Carboxylic acid > Ketone > Alcohol"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "The correct priority order is: Carboxylic acid > Aldehyde > Ketone > Alcohol. In IUPAC nomenclature, the highest priority functional group determines the suffix of the compound name.",
+                    incorrect: {
+                        0: "Alcohol has lower priority than both aldehyde and ketone.",
+                        2: "Carboxylic acid has the highest priority, not alcohol.",
+                        3: "Aldehyde has higher priority than ketone but lower than carboxylic acid."
+                    }
+                }
+            },
+            {
+                id: 4,
+                question: "Which functional group is present in both aldehydes and ketones?",
+                options: [
+                    "Hydroxyl group",
+                    "Carbonyl group",
+                    "Carboxyl group",
+                    "Ether linkage"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Both aldehydes and ketones contain the carbonyl group (C=O). The difference is that in aldehydes, the carbonyl carbon is bonded to at least one hydrogen atom, while in ketones, it's bonded to two carbon atoms.",
+                    incorrect: {
+                        0: "The hydroxyl group (-OH) is characteristic of alcohols, not aldehydes or ketones.",
+                        2: "The carboxyl group (-COOH) is characteristic of carboxylic acids.",
+                        3: "The ether linkage (-O-) is characteristic of ethers."
+                    }
+                }
+            },
+            {
+                id: 5,
+                question: "Which compound is a secondary amine?",
+                options: [
+                    "CH3NH2",
+                    "(CH3)2NH",
+                    "(CH3)3N",
+                    "C6H5NH2"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "(CH3)2NH (dimethylamine) is a secondary amine because the nitrogen atom is bonded to two carbon atoms and one hydrogen atom. Secondary amines have the general formula R2NH.",
+                    incorrect: {
+                        0: "CH3NH2 (methylamine) is a primary amine (RNH2).",
+                        2: "(CH3)3N (trimethylamine) is a tertiary amine (R3N).",
+                        3: "C6H5NH2 (aniline) is a primary aromatic amine."
+                    }
+                }
+            },
+            {
+                id: 6,
+                question: "Which functional group is responsible for the basic properties of amines?",
+                options: [
+                    "The lone pair on nitrogen atom",
+                    "The N-H bond",
+                    "The C-N bond",
+                    "The alkyl groups attached to nitrogen"
+                ],
+                correctAnswer: 0,
+                explanation: {
+                    correct: "The lone pair on the nitrogen atom is responsible for the basic properties of amines. This lone pair can accept a proton (H+), forming the ammonium ion (R3NH+).",
+                    incorrect: {
+                        1: "The N-H bond is not responsible for basicity; in fact, it can donate a proton in very strong bases.",
+                        2: "The C-N bond is a covalent bond and doesn't contribute to basicity.",
+                        3: "Alkyl groups can influence basicity through electronic effects but are not the source of basicity."
+                    }
+                }
+            },
+            {
+                id: 7,
+                question: "What is the functional group in ethers?",
+                options: [
+                    "-OH",
+                    "-O-",
+                    "C=O",
+                    "-COOH"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Ethers contain the functional group -O-, where an oxygen atom is bonded to two carbon atoms. The general formula for ethers is R-O-R'.",
+                    incorrect: {
+                        0: "-OH is the hydroxyl group found in alcohols.",
+                        2: "C=O is the carbonyl group found in aldehydes, ketones, and carboxylic acids.",
+                        3: "-COOH is the carboxyl group found in carboxylic acids."
+                    }
+                }
+            },
+            {
+                id: 8,
+                question: "Which compound contains a ketone functional group?",
+                options: [
+                    "CH3CH2OH",
+                    "CH3COOH",
+                    "CH3COCH3",
+                    "HCHO"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "CH3COCH3 (acetone) contains a ketone functional group. In ketones, the carbonyl group (C=O) is bonded to two carbon atoms.",
+                    incorrect: {
+                        0: "CH3CH2OH is ethanol, an alcohol.",
+                        1: "CH3COOH is acetic acid, a carboxylic acid.",
+                        3: "HCHO is formaldehyde, an aldehyde."
+                    }
+                }
+            },
+            {
+                id: 9,
+                question: "What is the functional group in nitro compounds?",
+                options: [
+                    "-NO",
+                    "-NO2",
+                    "-ONO",
+                    "-NO3"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Nitro compounds contain the -NO2 group, where nitrogen is bonded to two oxygen atoms and one carbon atom. The general formula is R-NO2.",
+                    incorrect: {
+                        0: "-NO is the nitrosyl group, not commonly found in organic compounds.",
+                        2: "-ONO is the nitrite ester group.",
+                        3: "-NO3 is the nitrate ester group."
+                    }
+                }
+            },
+            {
+                id: 10,
+                question: "Which functional group is present in thiols?",
+                options: [
+                    "-OH",
+                    "-SH",
+                    "-CHO",
+                    "-COOH"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Thiols contain the -SH (sulfhydryl) group. They are sulfur analogs of alcohols and have the general formula R-SH.",
+                    incorrect: {
+                        0: "-OH is the hydroxyl group found in alcohols.",
+                        2: "-CHO is the aldehyde group.",
+                        3: "-COOH is the carboxyl group found in carboxylic acids."
+                    }
+                }
+            },
+            {
+                id: 11,
+                question: "Which functional group gives a positive iodoform test?",
+                options: [
+                    "Primary alcohol",
+                    "Secondary alcohol",
+                    "Methyl ketone",
+                    "Aldehyde"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Methyl ketones (CH3COR) give a positive iodoform test. This test is also positive for alcohols that can be oxidized to methyl ketones, such as secondary alcohols with a methyl group adjacent to the carbon bearing the OH group.",
+                    incorrect: {
+                        0: "Primary alcohols generally do not give a positive iodoform test.",
+                        1: "Secondary alcohols only give a positive test if they can be oxidized to methyl ketones.",
+                        3: "Aldehydes do not typically give a positive iodoform test unless they are acetaldehyde."
+                    }
+                }
+            },
+            {
+                id: 12,
+                question: "Which functional group is responsible for the sweet smell of fruits?",
+                options: [
+                    "Alcohols",
+                    "Esters",
+                    "Carboxylic acids",
+                    "Aldehydes"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Esters are responsible for the sweet smell of many fruits. For example, isoamyl acetate gives bananas their characteristic smell, and ethyl butanoate gives pineapples their aroma.",
+                    incorrect: {
+                        0: "Alcohols generally have sharp, pungent odors.",
+                        2: "Carboxylic acids typically have sharp, unpleasant odors.",
+                        3: "Aldehydes often have pungent odors, though some are used in perfumes."
+                    }
+                }
+            },
+            {
+                id: 13,
+                question: "Which functional group can form hydrogen bonds with water?",
+                options: [
+                    "Alkyl group",
+                    "Ether group",
+                    "Hydroxyl group",
+                    "All of the above"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "The hydroxyl group (-OH) can form hydrogen bonds with water molecules, which increases the solubility of alcohols in water.",
+                    incorrect: {
+                        0: "Alkyl groups are hydrophobic and cannot form hydrogen bonds.",
+                        1: "Ether groups can accept hydrogen bonds but cannot donate them, so their solubility is limited.",
+                        3: "Not all of these groups can form hydrogen bonds with water."
+                    }
+                }
+            },
+            {
+                id: 14,
+                question: "Which functional group is present in formaldehyde?",
+                options: [
+                    "Alcohol",
+                    "Ketone",
+                    "Aldehyde",
+                    "Carboxylic acid"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Formaldehyde (HCHO) contains an aldehyde functional group. It is the simplest aldehyde.",
+                    incorrect: {
+                        0: "Alcohols contain the -OH group, not present in formaldehyde.",
+                        1: "Ketones have the carbonyl group bonded to two carbon atoms.",
+                        3: "Carboxylic acids contain the -COOH group."
+                    }
+                }
+            },
+            {
+                id: 15,
+                question: "Which functional group is characteristic of amides?",
+                options: [
+                    "-CONH2",
+                    "-CN",
+                    "-NH2",
+                    "-NO2"
+                ],
+                correctAnswer: 0,
+                explanation: {
+                    correct: "Amides contain the -CONH2 functional group, where a carbonyl group is bonded to a nitrogen atom.",
+                    incorrect: {
+                        1: "-CN is the cyano group found in nitriles.",
+                        2: "-NH2 is the amino group found in amines.",
+                        3: "-NO2 is the nitro group found in nitro compounds."
+                    }
+                }
+            },
+            {
+                id: 16,
+                question: "Which functional group undergoes nucleophilic addition reactions?",
+                options: [
+                    "Alkene",
+                    "Alkyne",
+                    "Carbonyl group",
+                    "Alcohol"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "The carbonyl group (C=O) undergoes nucleophilic addition reactions because the carbon atom is electrophilic due to the polarization of the C=O bond.",
+                    incorrect: {
+                        0: "Alkenes undergo electrophilic addition reactions.",
+                        1: "Alkynes undergo both electrophilic and nucleophilic addition reactions, but less readily than carbonyl compounds.",
+                        3: "Alcohols undergo substitution and elimination reactions, not typically nucleophilic addition."
+                    }
+                }
+            },
+            {
+                id: 17,
+                question: "Which functional group is present in acetylene?",
+                options: [
+                    "Alkene",
+                    "Alkyne",
+                    "Alcohol",
+                    "Aldehyde"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Acetylene (C2H2) contains a triple bond, which is characteristic of alkynes.",
+                    incorrect: {
+                        0: "Alkenes contain double bonds.",
+                        2: "Alcohols contain the -OH group.",
+                        3: "Aldehydes contain the -CHO group."
+                    }
+                }
+            },
+            {
+                id: 18,
+                question: "Which functional group gives a positive Tollens' test?",
+                options: [
+                    "Alcohols",
+                    "Ketones",
+                    "Aldehydes",
+                    "Carboxylic acids"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Aldehydes give a positive Tollens' test, which involves the reduction of silver ions to metallic silver, forming a silver mirror.",
+                    incorrect: {
+                        0: "Alcohols do not reduce Tollens' reagent.",
+                        1: "Ketones do not reduce Tollens' reagent.",
+                        3: "Carboxylic acids do not reduce Tollens' reagent."
+                    }
+                }
+            },
+            {
+                id: 19,
+                question: "Which functional group is present in glycerol?",
+                options: [
+                    "One alcohol group",
+                    "Two alcohol groups",
+                    "Three alcohol groups",
+                    "One aldehyde group"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Glycerol (C3H8O3) contains three alcohol (hydroxyl) groups, making it a triol.",
+                    incorrect: {
+                        0: "Glycerol has more than one alcohol group.",
+                        1: "Glycerol has three, not two, alcohol groups.",
+                        3: "Glycerol does not contain an aldehyde group."
+                    }
+                }
+            },
+            {
+                id: 20,
+                question: "Which functional group is responsible for the polymerization of alkenes?",
+                options: [
+                    "Double bond",
+                    "Triple bond",
+                    "Hydroxyl group",
+                    "Carbonyl group"
+                ],
+                correctAnswer: 0,
+                explanation: {
+                    correct: "The double bond in alkenes is responsible for their polymerization. Under appropriate conditions, the π-bond breaks and new σ-bonds form between molecules, creating long chains.",
+                    incorrect: {
+                        1: "Triple bonds are found in alkynes, which can also polymerize but differently.",
+                        2: "Hydroxyl groups are not directly involved in polymerization of alkenes.",
+                        3: "Carbonyl groups are not typically involved in addition polymerization like alkenes."
+                    }
+                }
+            }
+        ];
+
+        // Homologous Series MCQs - 20 questions
+        const homologousSeriesMCQs = [
+            {
+                id: 1,
+                question: "What is the general formula for alkenes?",
+                options: [
+                    "CnH2n+2",
+                    "CnH2n",
+                    "CnH2n-2",
+                    "CnH2n-6"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "The general formula for alkenes is CnH2n, where n is the number of carbon atoms. Alkenes contain at least one carbon-carbon double bond.",
+                    incorrect: {
+                        0: "CnH2n+2 is the general formula for alkanes (saturated hydrocarbons).",
+                        2: "CnH2n-2 is the general formula for alkynes (hydrocarbons with triple bonds) or cycloalkenes.",
+                        3: "CnH2n-6 is the general formula for aromatic compounds like benzene and its derivatives."
+                    }
+                }
+            },
+            {
+                id: 2,
+                question: "Which of the following is NOT a characteristic of a homologous series?",
+                options: [
+                    "Same functional group",
+                    "Similar chemical properties",
+                    "Same molecular formula",
+                    "Gradual change in physical properties"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Members of a homologous series do NOT have the same molecular formula. Each successive member differs by a -CH2- unit, so they have different molecular formulas.",
+                    incorrect: {
+                        0: "Members of a homologous series do have the same functional group.",
+                        1: "Members of a homologous series do have similar chemical properties.",
+                        3: "Members of a homologous series do show a gradual change in physical properties with increasing molecular mass."
+                    }
+                }
+            },
+            {
+                id: 3,
+                question: "What is the difference in molecular mass between successive members of a homologous series?",
+                options: [
+                    "12 amu",
+                    "14 amu",
+                    "16 amu",
+                    "18 amu"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "The difference in molecular mass between successive members of a homologous series is 14 amu. This corresponds to the mass of a -CH2- unit (12 for carbon + 2 for hydrogen = 14 amu).",
+                    incorrect: {
+                        0: "12 amu is the atomic mass of carbon alone, but we need to account for the hydrogens as well.",
+                        2: "16 amu is the atomic mass of oxygen.",
+                        3: "18 amu is the molecular mass of water."
+                    }
+                }
+            },
+            {
+                id: 4,
+                question: "Which homologous series has the general formula CnH2n+1OH?",
+                options: [
+                    "Aldehydes",
+                    "Ketones",
+                    "Alcohols",
+                    "Carboxylic acids"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "The general formula CnH2n+1OH represents alcohols. The -OH group is the functional group for alcohols.",
+                    incorrect: {
+                        0: "Aldehydes have the general formula CnH2n+1CHO.",
+                        1: "Ketones have the general formula CnH2n+1COCmH2m+1.",
+                        3: "Carboxylic acids have the general formula CnH2n+1COOH."
+                    }
+                }
+            },
+            {
+                id: 5,
+                question: "What is the fourth member of the alkane homologous series?",
+                options: [
+                    "Methane",
+                    "Ethane",
+                    "Propane",
+                    "Butane"
+                ],
+                correctAnswer: 3,
+                explanation: {
+                    correct: "The fourth member of the alkane homologous series is butane (C4H10). The series goes: methane (CH4), ethane (C2H6), propane (C3H8), butane (C4H10).",
+                    incorrect: {
+                        0: "Methane is the first member of the alkane series.",
+                        1: "Ethane is the second member of the alkane series.",
+                        2: "Propane is the third member of the alkane series."
+                    }
+                }
+            },
+            {
+                id: 6,
+                question: "Which homologous series has the general formula CnH2nO?",
+                options: [
+                    "Aldehydes",
+                    "Ketones",
+                    "Both aldehydes and ketones",
+                    "Ethers"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Both aldehydes and ketones have the general formula CnH2nO. They are constitutional isomers of each other.",
+                    incorrect: {
+                        0: "Aldehydes alone have the formula CnH2nO, but ketones also have this formula.",
+                        1: "Ketones alone have the formula CnH2nO, but aldehydes also have this formula.",
+                        3: "Ethers have the general formula CnH2n+2O."
+                    }
+                }
+            },
+            {
+                id: 7,
+                question: "What is the general formula for alkynes?",
+                options: [
+                    "CnH2n+2",
+                    "CnH2n",
+                    "CnH2n-2",
+                    "CnH2n-6"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "The general formula for alkynes is CnH2n-2, where n is the number of carbon atoms. Alkynes contain at least one carbon-carbon triple bond.",
+                    incorrect: {
+                        0: "CnH2n+2 is the general formula for alkanes.",
+                        1: "CnH2n is the general formula for alkenes.",
+                        3: "CnH2n-6 is the general formula for aromatic compounds."
+                    }
+                }
+            },
+            {
+                id: 8,
+                question: "Which of the following is the correct order of increasing boiling points in the alkane homologous series?",
+                options: [
+                    "Methane < Ethane < Propane < Butane",
+                    "Butane < Propane < Ethane < Methane",
+                    "Propane < Methane < Ethane < Butane",
+                    "Ethane < Methane < Propane < Butane"
+                ],
+                correctAnswer: 0,
+                explanation: {
+                    correct: "The boiling points increase with increasing molecular mass in a homologous series. Methane (-161°C) < Ethane (-89°C) < Propane (-42°C) < Butane (-0.5°C).",
+                    incorrect: {
+                        1: "This order is reversed; boiling points increase with molecular mass.",
+                        2: "Methane has the lowest boiling point, not propane.",
+                        3: "Methane has a lower boiling point than ethane."
+                    }
+                }
+            },
+            {
+                id: 9,
+                question: "What is the general formula for carboxylic acids?",
+                options: [
+                    "CnH2n+1OH",
+                    "CnH2n+1CHO",
+                    "CnH2n+1COOH",
+                    "CnH2n+1COOCmH2m+1"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "The general formula for carboxylic acids is CnH2n+1COOH. The -COOH group is the functional group for carboxylic acids.",
+                    incorrect: {
+                        0: "CnH2n+1OH is the general formula for alcohols.",
+                        1: "CnH2n+1CHO is the general formula for aldehydes.",
+                        3: "CnH2n+1COOCmH2m+1 is the general formula for esters."
+                    }
+                }
+            },
+            {
+                id: 10,
+                question: "Which homologous series has members that differ by -CH2- unit?",
+                options: [
+                    "Only alkanes",
+                    "Only alkenes",
+                    "Only alcohols",
+                    "All homologous series"
+                ],
+                correctAnswer: 3,
+                explanation: {
+                    correct: "All homologous series have members that differ by a -CH2- unit. This is a defining characteristic of homologous series.",
+                    incorrect: {
+                        0: "Not only alkanes; all homologous series show this characteristic.",
+                        1: "Not only alkenes; all homologous series show this characteristic.",
+                        2: "Not only alcohols; all homologous series show this characteristic."
+                    }
+                }
+            },
+            {
+                id: 11,
+                question: "What is the fifth member of the alcohol homologous series?",
+                options: [
+                    "Methanol",
+                    "Ethanol",
+                    "Propanol",
+                    "Pentanol"
+                ],
+                correctAnswer: 3,
+                explanation: {
+                    correct: "The fifth member of the alcohol homologous series is pentanol (C5H11OH). The series goes: methanol (CH3OH), ethanol (C2H5OH), propanol (C3H7OH), butanol (C4H9OH), pentanol (C5H11OH).",
+                    incorrect: {
+                        0: "Methanol is the first member.",
+                        1: "Ethanol is the second member.",
+                        2: "Propanol is the third member."
+                    }
+                }
+            },
+            {
+                id: 12,
+                question: "Which property generally increases with increasing molecular mass in a homologous series?",
+                options: [
+                    "Solubility in water",
+                    "Boiling point",
+                    "Reactivity",
+                    "Volatility"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Boiling point generally increases with increasing molecular mass in a homologous series due to stronger intermolecular forces (London dispersion forces).",
+                    incorrect: {
+                        0: "Solubility in water generally decreases with increasing molecular mass.",
+                        2: "Reactivity does not necessarily increase with molecular mass; it depends on the specific series.",
+                        3: "Volatility generally decreases with increasing molecular mass."
+                    }
+                }
+            },
+            {
+                id: 13,
+                question: "What is the general formula for primary amines?",
+                options: [
+                    "CnH2n+1NH2",
+                    "CnH2n+1CHO",
+                    "CnH2n+1COOH",
+                    "CnH2n+1OH"
+                ],
+                correctAnswer: 0,
+                explanation: {
+                    correct: "The general formula for primary amines is CnH2n+1NH2. Primary amines have one alkyl group attached to the nitrogen atom.",
+                    incorrect: {
+                        1: "CnH2n+1CHO is the general formula for aldehydes.",
+                        2: "CnH2n+1COOH is the general formula for carboxylic acids.",
+                        3: "CnH2n+1OH is the general formula for alcohols."
+                    }
+                }
+            },
+            {
+                id: 14,
+                question: "Which homologous series has the highest boiling points for compounds with similar molecular masses?",
+                options: [
+                    "Alkanes",
+                    "Alkenes",
+                    "Alcohols",
+                    "Aldehydes"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Alcohols generally have the highest boiling points for compounds with similar molecular masses because they can form hydrogen bonds, which are stronger than the London dispersion forces in alkanes and alkenes or the dipole-dipole interactions in aldehydes.",
+                    incorrect: {
+                        0: "Alkanes have lower boiling points due to only London dispersion forces.",
+                        1: "Alkenes have boiling points similar to alkanes.",
+                        3: "Aldehydes have higher boiling points than hydrocarbons but lower than alcohols."
+                    }
+                }
+            },
+            {
+                id: 15,
+                question: "What is the general formula for esters?",
+                options: [
+                    "CnH2n+1OH",
+                    "CnH2n+1CHO",
+                    "CnH2n+1COOH",
+                    "CnH2n+1COOCmH2m+1"
+                ],
+                correctAnswer: 3,
+                explanation: {
+                    correct: "The general formula for esters is CnH2n+1COOCmH2m+1. Esters are formed from the reaction of carboxylic acids and alcohols.",
+                    incorrect: {
+                        0: "CnH2n+1OH is the general formula for alcohols.",
+                        1: "CnH2n+1CHO is the general formula for aldehydes.",
+                        2: "CnH2n+1COOH is the general formula for carboxylic acids."
+                    }
+                }
+            },
+            {
+                id: 16,
+                question: "Which of the following is a characteristic of homologous series?",
+                options: [
+                    "Same molecular formula",
+                    "Different functional groups",
+                    "Gradual change in chemical properties",
+                    "Same physical properties"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Homologous series show a gradual change in physical properties, but their chemical properties remain similar due to the same functional group.",
+                    incorrect: {
+                        0: "Members have different molecular formulas, differing by -CH2-.",
+                        1: "All members have the same functional group.",
+                        3: "Physical properties change gradually with increasing molecular mass."
+                    }
+                }
+            },
+            {
+                id: 17,
+                question: "What is the third member of the aldehyde homologous series?",
+                options: [
+                    "Methanal",
+                    "Ethanal",
+                    "Propanal",
+                    "Butanal"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "The third member of the aldehyde homologous series is propanal (C2H5CHO). The series goes: methanal (HCHO), ethanal (CH3CHO), propanal (C2H5CHO).",
+                    incorrect: {
+                        0: "Methanal is the first member.",
+                        1: "Ethanal is the second member.",
+                        3: "Butanal is the fourth member."
+                    }
+                }
+            },
+            {
+                id: 18,
+                question: "Which homologous series has members that are isomers of each other?",
+                options: [
+                    "Alkanes only",
+                    "Alkenes only",
+                    "Alcohols only",
+                    "All homologous series with 4 or more carbon atoms"
+                ],
+                correctAnswer: 3,
+                explanation: {
+                    correct: "All homologous series with 4 or more carbon atoms can exhibit isomerism. For example, butane and isobutane are isomers in the alkane series.",
+                    incorrect: {
+                        0: "Not only alkanes; other series also show isomerism.",
+                        1: "Not only alkenes; other series also show isomerism.",
+                        2: "Not only alcohols; other series also show isomerism."
+                    }
+                }
+            },
+            {
+                id: 19,
+                question: "What is the general formula for haloalkanes?",
+                options: [
+                    "CnH2n+1X",
+                    "CnH2nX",
+                    "CnH2n-1X",
+                    "CnH2n+2X"
+                ],
+                correctAnswer: 0,
+                explanation: {
+                    correct: "The general formula for haloalkanes is CnH2n+1X, where X is a halogen atom (F, Cl, Br, I).",
+                    incorrect: {
+                        1: "CnH2nX would be for compounds with unsaturation, not typical haloalkanes.",
+                        2: "CnH2n-1X would be for compounds with more unsaturation.",
+                        3: "CnH2n+2X is not a standard formula for organic compounds."
+                    }
+                }
+            },
+            {
+                id: 20,
+                question: "Which property generally decreases with increasing molecular mass in a homologous series?",
+                options: [
+                    "Boiling point",
+                    "Melting point",
+                    "Solubility in water",
+                    "Density"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Solubility in water generally decreases with increasing molecular mass in a homologous series because the non-polar hydrocarbon portion becomes more dominant.",
+                    incorrect: {
+                        0: "Boiling point generally increases with molecular mass.",
+                        1: "Melting point generally increases with molecular mass.",
+                        3: "Density generally increases with molecular mass up to a point."
+                    }
+                }
+            }
+        ];
+
+        // Classification of Organic Compounds MCQs - 20 questions
+        const classificationMCQs = [
+            {
+                id: 1,
+                question: "Which of the following is an alicyclic compound?",
+                options: [
+                    "Benzene",
+                    "Cyclohexane",
+                    "Naphthalene",
+                    "Pyridine"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Cyclohexane is an alicyclic compound. Alicyclic compounds are cyclic compounds that resemble aliphatic compounds in their properties. They don't have aromatic character.",
+                    incorrect: {
+                        0: "Benzene is an aromatic compound, not alicyclic.",
+                        2: "Naphthalene is a polycyclic aromatic compound.",
+                        3: "Pyridine is a heterocyclic aromatic compound."
+                    }
+                }
+            },
+            {
+                id: 2,
+                question: "Which category does CH3-CH2-CH2-OH belong to?",
+                options: [
+                    "Aromatic compound",
+                    "Alicyclic compound",
+                    "Aliphatic compound",
+                    "Heterocyclic compound"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "CH3-CH2-CH2-OH (1-propanol) is an aliphatic compound. Aliphatic compounds are open-chain compounds (both saturated and unsaturated) and related cyclic compounds that don't have aromatic character.",
+                    incorrect: {
+                        0: "It doesn't contain a benzene ring or have aromatic character.",
+                        1: "It's not a cyclic compound.",
+                        3: "It doesn't contain a heteroatom in a ring structure."
+                    }
+                }
+            },
+            {
+                id: 3,
+                question: "What type of compound is C6H5NH2?",
+                options: [
+                    "Aliphatic amine",
+                    "Aromatic amine",
+                    "Heterocyclic amine",
+                    "Alicyclic amine"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "C6H5NH2 (aniline) is an aromatic amine because the amino group is directly attached to an aromatic ring (benzene ring).",
+                    incorrect: {
+                        0: "Aliphatic amines have the amino group attached to an alkyl group.",
+                        2: "Heterocyclic amines have nitrogen as part of a ring structure.",
+                        3: "Alicyclic amines have the amino group attached to an alicyclic ring."
+                    }
+                }
+            },
+            {
+                id: 4,
+                question: "Which of the following is a heterocyclic compound?",
+                options: [
+                    "Cyclohexane",
+                    "Benzene",
+                    "Furan",
+                    "Naphthalene"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Furan is a heterocyclic compound. It contains a ring with oxygen as a heteroatom (C4H4O).",
+                    incorrect: {
+                        0: "Cyclohexane is a homocyclic (carbocyclic) compound.",
+                        1: "Benzene is an aromatic homocyclic compound.",
+                        3: "Naphthalene is a polycyclic aromatic homocyclic compound."
+                    }
+                }
+            },
+            {
+                id: 5,
+                question: "What classification applies to compounds with the -COOH functional group?",
+                options: [
+                    "Aldehydes",
+                    "Ketones",
+                    "Carboxylic acids",
+                    "Esters"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Compounds with the -COOH functional group are classified as carboxylic acids. This group is also called the carboxyl group.",
+                    incorrect: {
+                        0: "Aldehydes have the -CHO functional group.",
+                        1: "Ketones have the C=O group bonded to two carbon atoms.",
+                        3: "Esters have the -COOR functional group."
+                    }
+                }
+            },
+            {
+                id: 6,
+                question: "Which of the following is an unsaturated compound?",
+                options: [
+                    "CH4",
+                    "C2H6",
+                    "C2H4",
+                    "C3H8"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "C2H4 (ethene) is an unsaturated compound because it contains a carbon-carbon double bond.",
+                    incorrect: {
+                        0: "CH4 (methane) is a saturated compound with only single bonds.",
+                        1: "C2H6 (ethane) is a saturated compound with only single bonds.",
+                        3: "C3H8 (propane) is a saturated compound with only single bonds."
+                    }
+                }
+            },
+            {
+                id: 7,
+                question: "What type of compound is CH3COCH3?",
+                options: [
+                    "Alcohol",
+                    "Aldehyde",
+                    "Ketone",
+                    "Carboxylic acid"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "CH3COCH3 (acetone) is a ketone. It contains a carbonyl group (C=O) bonded to two carbon atoms.",
+                    incorrect: {
+                        0: "Alcohols contain the -OH group.",
+                        1: "Aldehydes have the carbonyl group at the end of the carbon chain.",
+                        3: "Carboxylic acids contain the -COOH group."
+                    }
+                }
+            },
+            {
+                id: 8,
+                question: "Which of the following is a benzenoid aromatic compound?",
+                options: [
+                    "Cyclohexane",
+                    "Benzene",
+                    "Cyclopentadiene",
+                    "Pyridine"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Benzene is a benzenoid aromatic compound because it contains a benzene ring.",
+                    incorrect: {
+                        0: "Cyclohexane is an alicyclic compound, not aromatic.",
+                        2: "Cyclopentadiene is not aromatic; it doesn't follow Hückel's rule.",
+                        3: "Pyridine is a heterocyclic aromatic compound, not benzenoid."
+                    }
+                }
+            },
+            {
+                id: 9,
+                question: "What classification applies to compounds with the -OH group attached to an aromatic ring?",
+                options: [
+                    "Alcohols",
+                    "Phenols",
+                    "Enols",
+                    "Carboxylic acids"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Compounds with the -OH group attached directly to an aromatic ring are classified as phenols.",
+                    incorrect: {
+                        0: "Alcohols have the -OH group attached to an alkyl group.",
+                        2: "Enols have the -OH group attached to a carbon-carbon double bond.",
+                        3: "Carboxylic acids have the -COOH group."
+                    }
+                }
+            },
+            {
+                id: 10,
+                question: "Which of the following is an aliphatic compound?",
+                options: [
+                    "Benzene",
+                    "Toluene",
+                    "Ethane",
+                    "Naphthalene"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Ethane (C2H6) is an aliphatic compound. Aliphatic compounds are open-chain compounds or related cyclic compounds without aromatic character.",
+                    incorrect: {
+                        0: "Benzene is an aromatic compound.",
+                        1: "Toluene is an aromatic compound (methylbenzene).",
+                        3: "Naphthalene is a polycyclic aromatic compound."
+                    }
+                }
+            },
+            {
+                id: 11,
+                question: "What type of compound is CH3CH2OCH2CH3?",
+                options: [
+                    "Alcohol",
+                    "Aldehyde",
+                    "Ether",
+                    "Ester"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "CH3CH2OCH2CH3 (diethyl ether) is an ether. It contains an oxygen atom bonded to two carbon atoms.",
+                    incorrect: {
+                        0: "Alcohols contain the -OH group.",
+                        1: "Aldehydes contain the -CHO group.",
+                        3: "Esters contain the -COOR group."
+                    }
+                }
+            },
+            {
+                id: 12,
+                question: "Which of the following is a saturated compound?",
+                options: [
+                    "C2H2",
+                    "C2H4",
+                    "C6H6",
+                    "C3H8"
+                ],
+                correctAnswer: 3,
+                explanation: {
+                    correct: "C3H8 (propane) is a saturated compound because it contains only single bonds between carbon atoms.",
+                    incorrect: {
+                        0: "C2H2 (acetylene) is unsaturated (triple bond).",
+                        1: "C2H4 (ethene) is unsaturated (double bond).",
+                        2: "C6H6 (benzene) is unsaturated (aromatic with delocalized electrons)."
+                    }
+                }
+            },
+            {
+                id: 13,
+                question: "What classification applies to compounds with the -CN functional group?",
+                options: [
+                    "Amines",
+                    "Nitriles",
+                    "Nitro compounds",
+                    "Amides"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Compounds with the -CN functional group are classified as nitriles (or cyanides).",
+                    incorrect: {
+                        0: "Amines contain the -NH2, -NHR, or -NR2 group.",
+                        2: "Nitro compounds contain the -NO2 group.",
+                        3: "Amides contain the -CONH2 group."
+                    }
+                }
+            },
+            {
+                id: 14,
+                question: "Which of the following is a non-benzenoid aromatic compound?",
+                options: [
+                    "Benzene",
+                    "Toluene",
+                    "Cyclopentadienyl anion",
+                    "Naphthalene"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "The cyclopentadienyl anion is a non-benzenoid aromatic compound. It follows Hückel's rule (4n+2 π electrons) but doesn't contain a benzene ring.",
+                    incorrect: {
+                        0: "Benzene is a benzenoid aromatic compound.",
+                        1: "Toluene is a benzenoid aromatic compound.",
+                        3: "Naphthalene is a benzenoid aromatic compound."
+                    }
+                }
+            },
+            {
+                id: 15,
+                question: "What type of compound is CH3CONH2?",
+                options: [
+                    "Amine",
+                    "Amide",
+                    "Nitrile",
+                    "Nitro compound"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "CH3CONH2 (acetamide) is an amide. It contains the -CONH2 functional group.",
+                    incorrect: {
+                        0: "Amines contain the -NH2, -NHR, or -NR2 group.",
+                        2: "Nitriles contain the -CN group.",
+                        3: "Nitro compounds contain the -NO2 group."
+                    }
+                }
+            },
+            {
+                id: 16,
+                question: "Which of the following is a heterocyclic aromatic compound?",
+                options: [
+                    "Benzene",
+                    "Pyridine",
+                    "Cyclohexane",
+                    "Naphthalene"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Pyridine is a heterocyclic aromatic compound. It contains a ring with nitrogen as a heteroatom and has aromatic character.",
+                    incorrect: {
+                        0: "Benzene is a homocyclic aromatic compound.",
+                        2: "Cyclohexane is an alicyclic compound, not aromatic.",
+                        3: "Naphthalene is a homocyclic aromatic compound."
+                    }
+                }
+            },
+            {
+                id: 17,
+                question: "What classification applies to compounds with the -CHO functional group?",
+                options: [
+                    "Alcohols",
+                    "Aldehydes",
+                    "Ketones",
+                    "Carboxylic acids"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Compounds with the -CHO functional group are classified as aldehydes.",
+                    incorrect: {
+                        0: "Alcohols contain the -OH group.",
+                        2: "Ketones have the C=O group bonded to two carbon atoms.",
+                        3: "Carboxylic acids contain the -COOH group."
+                    }
+                }
+            },
+            {
+                id: 18,
+                question: "Which of the following is an example of an organometallic compound?",
+                options: [
+                    "CH3Cl",
+                    "CH3MgBr",
+                    "CH3OH",
+                    "CH3COOH"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "CH3MgBr (methylmagnesium bromide) is an organometallic compound. It contains a carbon-metal bond (C-Mg).",
+                    incorrect: {
+                        0: "CH3Cl is a haloalkane, not organometallic.",
+                        2: "CH3OH is an alcohol, not organometallic.",
+                        3: "CH3COOH is a carboxylic acid, not organometallic."
+                    }
+                }
+            },
+            {
+                id: 19,
+                question: "What type of compound is C6H5COOH?",
+                options: [
+                    "Aliphatic carboxylic acid",
+                    "Aromatic carboxylic acid",
+                    "Aliphatic alcohol",
+                    "Aromatic alcohol"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "C6H5COOH (benzoic acid) is an aromatic carboxylic acid. The carboxyl group is attached directly to an aromatic ring.",
+                    incorrect: {
+                        0: "Aliphatic carboxylic acids have the carboxyl group attached to an alkyl group.",
+                        2: "It's not an alcohol; it's a carboxylic acid.",
+                        3: "Aromatic alcohols are phenols, which have -OH attached to an aromatic ring."
+                    }
+                }
+            },
+            {
+                id: 20,
+                question: "Which of the following is a cyclic compound?",
+                options: [
+                    "CH4",
+                    "C2H6",
+                    "C6H6",
+                    "C2H4"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "C6H6 (benzene) is a cyclic compound. It contains a ring of carbon atoms.",
+                    incorrect: {
+                        0: "CH4 (methane) is an open-chain compound.",
+                        1: "C2H6 (ethane) is an open-chain compound.",
+                        3: "C2H4 (ethene) is an open-chain compound."
+                    }
+                }
+            }
+        ];
+
+        // Stereo Isomerism MCQs - 20 questions
+        const stereoIsomerismMCQs = [
+            {
+                id: 1,
+                question: "What is the necessary condition for a molecule to show optical activity?",
+                options: [
+                    "Presence of a chiral center",
+                    "Lack of a plane of symmetry",
+                    "Non-superimposability on its mirror image",
+                    "All of the above"
+                ],
+                correctAnswer: 3,
+                explanation: {
+                    correct: "All of these conditions are necessary for a molecule to show optical activity. A chiral center is the most common cause, but the fundamental requirement is that the molecule must be non-superimposable on its mirror image (chiral), which typically means it lacks a plane of symmetry.",
+                    incorrect: {
+                        0: "While a chiral center often causes chirality, it's not the only way; some molecules without chiral centers can be chiral.",
+                        1: "Lack of a plane of symmetry is important but not sufficient by itself.",
+                        2: "Non-superimposability is the definition of chirality, but we need to consider all aspects."
+                    }
+                }
+            },
+            {
+                id: 2,
+                question: "How many stereoisomers are possible for a molecule with two different chiral centers?",
+                options: [
+                    "2",
+                    "3",
+                    "4",
+                    "It depends on the molecule"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "For a molecule with two different chiral centers, 4 stereoisomers are possible (2 pairs of enantiomers). This is the maximum number possible for two chiral centers.",
+                    incorrect: {
+                        0: "2 stereoisomers would be for one chiral center.",
+                        1: "3 is not a typical number for stereoisomers with two chiral centers.",
+                        3: "While it does depend on the molecule, for two different chiral centers, the maximum is 4."
+                    }
+                }
+            },
+            {
+                id: 3,
+                question: "What type of isomerism is shown by maleic acid and fumaric acid?",
+                options: [
+                    "Optical isomerism",
+                    "Geometrical isomerism",
+                    "Conformational isomerism",
+                    "Functional group isomerism"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Maleic acid and fumaric acid show geometrical isomerism (cis-trans isomerism). They are dicarboxylic acids with a double bond, and they differ in the spatial arrangement around the double bond.",
+                    incorrect: {
+                        0: "They don't have chiral centers, so they don't show optical isomerism.",
+                        2: "Conformational isomers interconvert rapidly at room temperature, but these are stable, separable isomers.",
+                        3: "They have the same functional groups, just arranged differently in space."
+                    }
+                }
+            },
+            {
+                id: 4,
+                question: "Which of the following is true for enantiomers?",
+                options: [
+                    "They have different physical properties",
+                    "They have different chemical properties",
+                    "They rotate plane-polarized light in opposite directions",
+                    "They are superimposable on each other"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Enantiomers rotate plane-polarized light in equal but opposite directions. One enantiomer rotates light clockwise (dextrorotatory, +), while the other rotates it counterclockwise (levorotatory, -).",
+                    incorrect: {
+                        0: "Enantiomers have identical physical properties except for optical rotation.",
+                        1: "Enantiomers have identical chemical properties toward achiral reagents.",
+                        3: "Enantiomers are non-superimposable mirror images, not superimposable."
+                    }
+                }
+            },
+            {
+                id: 5,
+                question: "What is the relationship between the following two molecules? CH3-CHCl-CH3 and CH3-CH2-CH2Cl",
+                options: [
+                    "Enantiomers",
+                    "Diastereomers",
+                    "Constitutional isomers",
+                    "Identical compounds"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "These are constitutional isomers (structural isomers). They have the same molecular formula (C3H7Cl) but different connectivity of atoms. One is 2-chloropropane and the other is 1-chloropropane.",
+                    incorrect: {
+                        0: "They are not mirror images; they have different structures.",
+                        1: "Diastereomers are stereoisomers that are not mirror images, but these are not stereoisomers at all.",
+                        3: "They are different compounds with different properties."
+                    }
+                }
+            },
+            {
+                id: 6,
+                question: "What is a meso compound?",
+                options: [
+                    "A chiral compound that rotates plane-polarized light",
+                    "An achiral compound with chiral centers",
+                    "A racemic mixture",
+                    "A compound with no chiral centers"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "A meso compound is an achiral compound that contains chiral centers but has a plane of symmetry, making it optically inactive.",
+                    incorrect: {
+                        0: "Chiral compounds rotate plane-polarized light, but meso compounds are achiral.",
+                        2: "A racemic mixture is a 1:1 mixture of enantiomers.",
+                        3: "A compound with no chiral centers may or may not be chiral, but it's not specifically a meso compound."
+                    }
+                }
+            },
+            {
+                id: 7,
+                question: "Which of the following compounds can exist as cis-trans isomers?",
+                options: [
+                    "CH3CH=CH2",
+                    "CH3CH=CHCH3",
+                    "CH2=CH2",
+                    "CH3CH2CH3"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "CH3CH=CHCH3 (2-butene) can exist as cis-trans isomers because it has two different groups on each carbon of the double bond.",
+                    incorrect: {
+                        0: "CH3CH=CH2 (propene) has two identical hydrogen atoms on one carbon, so it doesn't show cis-trans isomerism.",
+                        2: "CH2=CH2 (ethene) has two identical hydrogen atoms on each carbon.",
+                        3: "CH3CH2CH3 (propane) has no double bond, so it can't have geometrical isomerism."
+                    }
+                }
+            },
+            {
+                id: 8,
+                question: "What is the relationship between D-glucose and L-glucose?",
+                options: [
+                    "Diastereomers",
+                    "Enantiomers",
+                    "Constitutional isomers",
+                    "Identical compounds"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "D-glucose and L-glucose are enantiomers. They are non-superimposable mirror images of each other.",
+                    incorrect: {
+                        0: "Diastereomers are stereoisomers that are not mirror images.",
+                        2: "They have the same connectivity of atoms, so they're not constitutional isomers.",
+                        3: "They are different compounds with opposite configurations at all chiral centers."
+                    }
+                }
+            },
+            {
+                id: 9,
+                question: "Which of the following is true for diastereomers?",
+                options: [
+                    "They are mirror images of each other",
+                    "They have identical physical properties",
+                    "They have different physical properties",
+                    "They rotate plane-polarized light equally"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Diastereomers have different physical properties, which allows them to be separated by conventional methods like distillation or chromatography.",
+                    incorrect: {
+                        0: "Diastereomers are not mirror images; that's the definition of enantiomers.",
+                        1: "They do not have identical physical properties.",
+                        3: "They may rotate plane-polarized light, but not necessarily equally."
+                    }
+                }
+            },
+            {
+                id: 10,
+                question: "How many chiral centers are present in glucose?",
+                options: [
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Glucose has 4 chiral centers. In its open-chain form, carbons 2, 3, 4, and 5 are chiral centers.",
+                    incorrect: {
+                        0: "2 is too few; glucose has more chiral centers.",
+                        1: "3 is incorrect; glucose has 4 chiral centers.",
+                        3: "5 is too many; glucose has 4 chiral centers in its open-chain form."
+                    }
+                }
+            },
+            {
+                id: 11,
+                question: "What is a racemic mixture?",
+                options: [
+                    "A mixture of diastereomers",
+                    "A 1:1 mixture of enantiomers",
+                    "A meso compound",
+                    "A single enantiomer"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "A racemic mixture is a 1:1 mixture of two enantiomers. It is optically inactive because the rotations cancel each other out.",
+                    incorrect: {
+                        0: "A mixture of diastereomers is not necessarily racemic.",
+                        2: "A meso compound is a single compound, not a mixture.",
+                        3: "A single enantiomer is optically active, not a mixture."
+                    }
+                }
+            },
+            {
+                id: 12,
+                question: "Which of the following compounds is chiral?",
+                options: [
+                    "CH4",
+                    "CH3Cl",
+                    "CH2Cl2",
+                    "CHClBrF"
+                ],
+                correctAnswer: 3,
+                explanation: {
+                    correct: "CHClBrF is chiral because the carbon atom is bonded to four different atoms (Cl, Br, F, H), making it a chiral center.",
+                    incorrect: {
+                        0: "CH4 has four identical hydrogen atoms, so it's not chiral.",
+                        1: "CH3Cl has three identical hydrogen atoms, so it's not chiral.",
+                        2: "CH2Cl2 has two identical hydrogen atoms and two identical chlorine atoms, so it's not chiral."
+                    }
+                }
+            },
+            {
+                id: 13,
+                question: "What is the relationship between the chair and boat conformations of cyclohexane?",
+                options: [
+                    "Enantiomers",
+                    "Diastereomers",
+                    "Conformational isomers",
+                    "Constitutional isomers"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "The chair and boat conformations of cyclohexane are conformational isomers. They can interconvert by rotation around single bonds.",
+                    incorrect: {
+                        0: "They are not mirror images, so they're not enantiomers.",
+                        1: "Diastereomers are stereoisomers that are not mirror images, but these are conformers, not different compounds.",
+                        3: "They have the same connectivity of atoms, so they're not constitutional isomers."
+                    }
+                }
+            },
+            {
+                id: 14,
+                question: "Which of the following can show optical activity?",
+                options: [
+                    "A meso compound",
+                    "A racemic mixture",
+                    "A single enantiomer",
+                    "An achiral compound"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "A single enantiomer can show optical activity because it rotates plane-polarized light.",
+                    incorrect: {
+                        0: "A meso compound is achiral and optically inactive.",
+                        1: "A racemic mixture is optically inactive because the rotations cancel out.",
+                        3: "An achiral compound does not rotate plane-polarized light."
+                    }
+                }
+            },
+            {
+                id: 15,
+                question: "What is the maximum number of stereoisomers possible for a compound with 3 chiral centers?",
+                options: [
+                    "4",
+                    "6",
+                    "8",
+                    "10"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "The maximum number of stereoisomers for a compound with n chiral centers is 2^n. For 3 chiral centers, that's 2^3 = 8 stereoisomers.",
+                    incorrect: {
+                        0: "4 would be for 2 chiral centers.",
+                        1: "6 is not a power of 2.",
+                        3: "10 is not a power of 2."
+                    }
+                }
+            },
+            {
+                id: 16,
+                question: "Which of the following is an example of geometrical isomers?",
+                options: [
+                    "D-glucose and L-glucose",
+                    "cis-2-butene and trans-2-butene",
+                    "Chair and boat conformations of cyclohexane",
+                    "1-propanol and 2-propanol"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "cis-2-butene and trans-2-butene are geometrical isomers. They differ in the spatial arrangement around the double bond.",
+                    incorrect: {
+                        0: "D-glucose and L-glucose are enantiomers, not geometrical isomers.",
+                        2: "Chair and boat conformations are conformational isomers.",
+                        3: "1-propanol and 2-propanol are constitutional isomers."
+                    }
+                }
+            },
+            {
+                id: 17,
+                question: "What is the specific rotation of a racemic mixture?",
+                options: [
+                    "+",
+                    "-",
+                    "0",
+                    "It depends on the compound"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "The specific rotation of a racemic mixture is 0 because the rotations of the two enantiomers cancel each other out.",
+                    incorrect: {
+                        0: "A single enantiomer has either + or - rotation, but a racemic mixture has zero rotation.",
+                        1: "A single enantiomer has either + or - rotation, but a racemic mixture has zero rotation.",
+                        3: "For any racemic mixture, the specific rotation is always 0."
+                    }
+                }
+            },
+            {
+                id: 18,
+                question: "Which of the following compounds is a meso compound?",
+                options: [
+                    "2,3-dichlorobutane",
+                    "2-chlorobutane",
+                    "1,2-dichloroethane",
+                    "2-butanol"
+                ],
+                correctAnswer: 0,
+                explanation: {
+                    correct: "2,3-dichlorobutane can be a meso compound if it has a plane of symmetry. The meso form of 2,3-dichlorobutane has the chlorine atoms arranged such that there's a plane of symmetry.",
+                    incorrect: {
+                        1: "2-chlorobutane has one chiral center and is chiral, not meso.",
+                        2: "1,2-dichloroethane has no chiral centers.",
+                        3: "2-butanol has one chiral center and is chiral, not meso."
+                    }
+                }
+            },
+            {
+                id: 19,
+                question: "What is the relationship between erythrose and threose?",
+                options: [
+                    "Enantiomers",
+                    "Diastereomers",
+                    "Constitutional isomers",
+                    "Identical compounds"
+                ],
+                correctAnswer: 1,
+                explanation: {
+                    correct: "Erythrose and threose are diastereomers. They are stereoisomers that are not mirror images of each other.",
+                    incorrect: {
+                        0: "They are not mirror images, so they're not enantiomers.",
+                        2: "They have the same connectivity of atoms, so they're not constitutional isomers.",
+                        3: "They are different compounds with different configurations."
+                    }
+                }
+            },
+            {
+                id: 20,
+                question: "Which of the following statements about chiral molecules is correct?",
+                options: [
+                    "They always have a plane of symmetry",
+                    "They are always optically active",
+                    "They have a non-superimposable mirror image",
+                    "They have an even number of chiral centers"
+                ],
+                correctAnswer: 2,
+                explanation: {
+                    correct: "Chiral molecules have a non-superimposable mirror image. This is the definition of chirality.",
+                    incorrect: {
+                        0: "Chiral molecules do not have a plane of symmetry.",
+                        1: "While chiral molecules can be optically active, a racemic mixture of chiral molecules is optically inactive.",
+                        3: "Chiral molecules can have any number of chiral centers, odd or even."
+                    }
+                }
+            }
+        ];
+
+        // Progress tracking for four topics
+        let progress = {
+            functionalGroups: Array(functionalGroupsMCQs.length).fill(false),
+            homologousSeries: Array(homologousSeriesMCQs.length).fill(false),
+            classification: Array(classificationMCQs.length).fill(false),
+            stereoIsomerism: Array(stereoIsomerismMCQs.length).fill(false)
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the application
+            initApp();
+            
+            function initApp() {
+                // Set up event listeners for welcome screen
+                document.getElementById('start-btn').addEventListener('click', () => {
+                    document.getElementById('welcome-overlay').classList.add('hidden');
+                });
+                
+                // Hide welcome animation after delay
+                setTimeout(() => {
+                    document.getElementById('welcome-overlay').classList.add('hidden');
+                }, 5000);
+                
+                // Load progress from localStorage
+                loadProgress();
+                
+                // Set up tab navigation
+                setupTabs();
+                
+                // Set up event listeners
+                setupEventListeners();
+                
+                // Load MCQs
+                loadMCQs();
+                
+                // Update progress display
+                updateProgress();
+                
+                // Apply animations
+                applyAnimations();
+            }
+            
+            function setupTabs() {
+                const tabButtons = document.querySelectorAll('.nav-btn[data-tab]');
+                const tabContents = document.querySelectorAll('.tab-content');
+                
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const tabId = button.getAttribute('data-tab');
+                        
+                        // Update active tab button
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+                        
+                        // Show active content
+                        tabContents.forEach(content => content.classList.remove('active'));
+                        document.getElementById(`${tabId}-tab`).classList.add('active');
+                    });
+                });
+            }
+            
+            function setupEventListeners() {
+                // Hamburger menu toggle
+                document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
+                
+                // Theme toggle
+                document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+                
+                // Refresh buttons
+                document.getElementById('refresh-functional-groups').addEventListener('click', () => loadMCQs());
+                document.getElementById('refresh-homologous-series').addEventListener('click', () => loadMCQs());
+                document.getElementById('refresh-classification').addEventListener('click', () => loadMCQs());
+                document.getElementById('refresh-stereo-isomerism').addEventListener('click', () => loadMCQs());
+                
+                // Reset progress button
+                document.getElementById('reset-progress').addEventListener('click', resetProgress);
+            }
+            
+            function toggleMenu() {
+                const menuToggle = document.getElementById('menu-toggle');
+                const mainNav = document.getElementById('main-nav');
+                
+                menuToggle.classList.toggle('active');
+                mainNav.classList.toggle('active');
+            }
+            
+            function toggleTheme() {
+                const themeToggle = document.getElementById('theme-toggle');
+                document.body.classList.toggle('dark-mode');
+                themeToggle.classList.toggle('dark');
+                saveToLocalStorage('darkMode', document.body.classList.contains('dark-mode'));
+            }
+            
+            function loadMCQs() {
+                // Load functional groups MCQs
+                const functionalGroupsContainer = document.getElementById('functional-groups-mcqs-container');
+                functionalGroupsContainer.innerHTML = '';
+                
+                functionalGroupsMCQs.forEach(mcq => {
+                    const mcqCard = createMCQCard(mcq, 'functionalGroups');
+                    functionalGroupsContainer.appendChild(mcqCard);
+                });
+                
+                // Load homologous series MCQs
+                const homologousSeriesContainer = document.getElementById('homologous-series-mcqs-container');
+                homologousSeriesContainer.innerHTML = '';
+                
+                homologousSeriesMCQs.forEach(mcq => {
+                    const mcqCard = createMCQCard(mcq, 'homologousSeries');
+                    homologousSeriesContainer.appendChild(mcqCard);
+                });
+                
+                // Load classification MCQs
+                const classificationContainer = document.getElementById('classification-mcqs-container');
+                classificationContainer.innerHTML = '';
+                
+                classificationMCQs.forEach(mcq => {
+                    const mcqCard = createMCQCard(mcq, 'classification');
+                    classificationContainer.appendChild(mcqCard);
+                });
+                
+                // Load stereo isomerism MCQs
+                const stereoIsomerismContainer = document.getElementById('stereo-isomerism-mcqs-container');
+                stereoIsomerismContainer.innerHTML = '';
+                
+                stereoIsomerismMCQs.forEach(mcq => {
+                    const mcqCard = createMCQCard(mcq, 'stereoIsomerism');
+                    stereoIsomerismContainer.appendChild(mcqCard);
+                });
+            }
+            
+            function createMCQCard(mcq, type) {
+                const card = document.createElement('div');
+                card.className = 'card mcq-card fade-in';
+                card.id = `${type}-mcq-${mcq.id}`;
+                
+                // Check if this MCQ has been completed
+                const isCompleted = progress[type][mcq.id - 1];
+                const completionClass = isCompleted ? 'completed' : '';
+                
+                card.innerHTML = `
+                    <div class="mcq-info">
+                        <div class="mcq-id">MCQ #${mcq.id} ${isCompleted ? '<i class="fas fa-check" style="color: var(--success); margin-left: 4.05px;"></i>' : ''}</div>
+                        <div class="mcq-subject">${getTopicName(type)}</div>
+                        <div class="mcq-question">${mcq.question}</div>
+                        <div class="mcq-options">
+                            ${mcq.options.map((option, index) => `
+                                <div class="mcq-option ${completionClass}" data-option="${index}">${String.fromCharCode(65 + index)}) ${option}</div>
+                            `).join('')}
+                        </div>
+                        <div class="mcq-explanation">
+                            <div class="explanation-title">Explanation:</div>
+                            <div class="explanation-content">${generateExplanation(mcq)}</div>
+                        </div>
+                    </div>
+                    <div class="mcq-actions">
+                        <button class="btn btn-primary check-answer-btn">
+                            <i class="fas fa-check"></i> Check Answer
+                        </button>
+                        <button class="btn btn-secondary show-explanation-btn">
+                            <i class="fas fa-lightbulb"></i> Show Explanation
+                        </button>
+                    </div>
+                `;
+                
+                // Add event listeners to the buttons
+                const checkAnswerBtn = card.querySelector('.check-answer-btn');
+                const showExplanationBtn = card.querySelector('.show-explanation-btn');
+                const options = card.querySelectorAll('.mcq-option');
+                
+                let selectedOption = null;
+                
+                // If already completed, show the correct answer
+                if (isCompleted) {
+                    const correctOption = card.querySelector(`.mcq-option[data-option="${mcq.correctAnswer}"]`);
+                    correctOption.classList.add('correct');
+                    
+                    // Disable further selection
+                    options.forEach(option => {
+                        option.style.pointerEvents = 'none';
+                    });
+                    
+                    checkAnswerBtn.disabled = true;
+                    checkAnswerBtn.innerHTML = '<i class="fas fa-check"></i> Completed';
+                } else {
+                    options.forEach(option => {
+                        option.addEventListener('click', () => {
+                            // Remove selection from all options
+                            options.forEach(opt => opt.classList.remove('selected'));
+                            
+                            // Select the clicked option
+                            option.classList.add('selected');
+                            selectedOption = parseInt(option.getAttribute('data-option'));
+                        });
+                    });
+                    
+                    checkAnswerBtn.addEventListener('click', () => {
+                        if (selectedOption === null) {
+                            alert('Please select an answer first!');
+                            return;
+                        }
+                        
+                        // Remove previous correct/incorrect classes
+                        options.forEach(option => {
+                            option.classList.remove('correct', 'incorrect');
+                        });
+                        
+                        // Mark the correct answer
+                        const correctOption = card.querySelector(`.mcq-option[data-option="${mcq.correctAnswer}"]`);
+                        correctOption.classList.add('correct');
+                        
+                        // Mark the selected answer if incorrect
+                        if (selectedOption !== mcq.correctAnswer) {
+                            const selectedOptionElement = card.querySelector(`.mcq-option[data-option="${selectedOption}"]`);
+                            selectedOptionElement.classList.add('incorrect');
+                        } else {
+                            // If correct, mark as completed
+                            progress[type][mcq.id - 1] = true;
+                            saveProgress();
+                            updateProgress();
+                            
+                            // Update the card to show completion
+                            const mcqId = card.querySelector('.mcq-id');
+                            mcqId.innerHTML = `MCQ #${mcq.id} <i class="fas fa-check" style="color: var(--success); margin-left: 4.05px;"></i>`;
+                            
+                            // Disable further selection
+                            options.forEach(option => {
+                                option.style.pointerEvents = 'none';
+                            });
+                            
+                            checkAnswerBtn.disabled = true;
+                            checkAnswerBtn.innerHTML = '<i class="fas fa-check"></i> Completed';
+                        }
+                    });
+                }
+                
+                showExplanationBtn.addEventListener('click', () => {
+                    const explanation = card.querySelector('.mcq-explanation');
+                    explanation.classList.toggle('show');
+                });
+                
+                return card;
+            }
+            
+            function getTopicName(type) {
+                const topicNames = {
+                    functionalGroups: 'Functional Groups',
+                    homologousSeries: 'Homologous Series',
+                    classification: 'Classification of Organic Compounds',
+                    stereoIsomerism: 'Stereo Isomerism'
+                };
+                return topicNames[type] || 'Unknown Topic';
+            }
+            
+            function generateExplanation(mcq) {
+                let explanationHTML = `<p><strong>Correct Answer:</strong> ${String.fromCharCode(65 + mcq.correctAnswer)}) ${mcq.options[mcq.correctAnswer]}</p>`;
+                explanationHTML += `<p><strong>Why this is correct:</strong> ${mcq.explanation.correct}</p>`;
+                
+                explanationHTML += `<p><strong>Why other options are incorrect:</strong></p><ul>`;
+                for (const [index, reason] of Object.entries(mcq.explanation.incorrect)) {
+                    explanationHTML += `<li><strong>${String.fromCharCode(65 + parseInt(index))})</strong> ${reason}</li>`;
+                }
+                explanationHTML += `</ul>`;
+                
+                return explanationHTML;
+            }
+            
+            function updateProgress() {
+                // Calculate completion counts
+                const functionalGroupsCompleted = progress.functionalGroups.filter(Boolean).length;
+                const homologousSeriesCompleted = progress.homologousSeries.filter(Boolean).length;
+                const classificationCompleted = progress.classification.filter(Boolean).length;
+                const stereoIsomerismCompleted = progress.stereoIsomerism.filter(Boolean).length;
+                const totalCompleted = functionalGroupsCompleted + homologousSeriesCompleted + classificationCompleted + stereoIsomerismCompleted;
+                
+                // Update functional groups progress
+                document.getElementById('functional-groups-completed').textContent = functionalGroupsCompleted;
+                document.getElementById('functional-groups-progress').style.width = `${(functionalGroupsCompleted / functionalGroupsMCQs.length) * 100}%`;
+                
+                // Update homologous series progress
+                document.getElementById('homologous-series-completed').textContent = homologousSeriesCompleted;
+                document.getElementById('homologous-series-progress').style.width = `${(homologousSeriesCompleted / homologousSeriesMCQs.length) * 100}%`;
+                
+                // Update classification progress
+                document.getElementById('classification-completed').textContent = classificationCompleted;
+                document.getElementById('classification-progress').style.width = `${(classificationCompleted / classificationMCQs.length) * 100}%`;
+                
+                // Update stereo isomerism progress
+                document.getElementById('stereo-isomerism-completed').textContent = stereoIsomerismCompleted;
+                document.getElementById('stereo-isomerism-progress').style.width = `${(stereoIsomerismCompleted / stereoIsomerismMCQs.length) * 100}%`;
+                
+                // Update overall progress
+                document.getElementById('completed-mcqs').textContent = totalCompleted;
+                document.getElementById('overall-completed').textContent = totalCompleted;
+                document.getElementById('overall-progress').style.width = `${(totalCompleted / (functionalGroupsMCQs.length + homologousSeriesMCQs.length + classificationMCQs.length + stereoIsomerismMCQs.length)) * 100}%`;
+                
+                // Update summary
+                document.getElementById('functional-groups-summary').textContent = functionalGroupsCompleted;
+                document.getElementById('homologous-series-summary').textContent = homologousSeriesCompleted;
+                document.getElementById('classification-summary').textContent = classificationCompleted;
+                document.getElementById('stereo-isomerism-summary').textContent = stereoIsomerismCompleted;
+                document.getElementById('functional-groups-summary-progress').style.width = `${(functionalGroupsCompleted / functionalGroupsMCQs.length) * 100}%`;
+                document.getElementById('homologous-series-summary-progress').style.width = `${(homologousSeriesCompleted / homologousSeriesMCQs.length) * 100}%`;
+                document.getElementById('classification-summary-progress').style.width = `${(classificationCompleted / classificationMCQs.length) * 100}%`;
+                document.getElementById('stereo-isomerism-summary-progress').style.width = `${(stereoIsomerismCompleted / stereoIsomerismMCQs.length) * 100}%`;
+            }
+            
+            function resetProgress() {
+                if (confirm('Are you sure you want to reset all progress? This action cannot be undone.')) {
+                    progress = {
+                        functionalGroups: Array(functionalGroupsMCQs.length).fill(false),
+                        homologousSeries: Array(homologousSeriesMCQs.length).fill(false),
+                        classification: Array(classificationMCQs.length).fill(false),
+                        stereoIsomerism: Array(stereoIsomerismMCQs.length).fill(false)
+                    };
+                    saveProgress();
+                    updateProgress();
+                    loadMCQs();
+                }
+            }
+            
+            function saveProgress() {
+                saveToLocalStorage('chemistryProgress', progress);
+            }
+            
+            function loadProgress() {
+                const savedProgress = getFromLocalStorage('chemistryProgress');
+                if (savedProgress) {
+                    progress = savedProgress;
+                }
+            }
+            
+            function applyAnimations() {
+                const elements = document.querySelectorAll('.panel, .card, .nav-btn');
+                
+                elements.forEach((element, index) => {
+                    setTimeout(() => {
+                        element.classList.add('fade-in');
+                    }, index * 50);
+                });
+            }
+            
+            function saveToLocalStorage(key, value) {
+                try {
+                    localStorage.setItem(key, JSON.stringify(value));
+                } catch (e) {
+                    console.error('Error saving to localStorage:', e);
+                }
+            }
+            
+            function getFromLocalStorage(key) {
+                try {
+                    const value = localStorage.getItem(key);
+                    return value ? JSON.parse(value) : null;
+                } catch (e) {
+                    console.error('Error reading from localStorage:', e);
+                    return null;
+                }
+            }
+            
+            // Load dark mode setting
+            const darkMode = getFromLocalStorage('darkMode');
+            if (darkMode) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('theme-toggle').classList.add('dark');
+            }
+        });
+    </script>
+</body>
+</html>
